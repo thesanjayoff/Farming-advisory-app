@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
 import {
   Select,
   SelectContent,
@@ -92,38 +92,43 @@ export default function OnboardingPage() {
   return (
     <PageShell title={t("onboarding_welcome")} showBack>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 pb-8">
-        <div>
-          <Label className="mb-1">{t("onboarding_choose_language")}</Label>
-          <div className="flex gap-2">
-            {supportedLanguages.map((l) => (
-              <Button
-                type="button"
-                key={l.code}
-                variant={lang === l.code ? "default" : "outline"}
-                className={lang === l.code ? "bg-brand text-white hover:bg-brand/90" : ""}
-                onClick={() => setLang(l.code)}
-              >
-                {l.label}
-              </Button>
-            ))}
-          </div>
-        </div>
+        <Card>
+          <CardContent className="flex flex-col gap-5">
+            <div>
+              <Label className="mb-1">{t("onboarding_choose_language")}</Label>
+              <div className="flex gap-2">
+                {supportedLanguages.map((l) => (
+                  <Button
+                    type="button"
+                    key={l.code}
+                    variant={lang === l.code ? "default" : "outline"}
+                    className={lang === l.code ? "bg-brand text-white hover:bg-brand/90" : ""}
+                    onClick={() => setLang(l.code)}
+                  >
+                    {l.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
 
-        <div>
-          <Label className="mb-1" htmlFor="farmerName">
-            {t("onboarding_farmer_name")}
-          </Label>
-          <Input
-            id="farmerName"
-            value={farmerName}
-            onChange={(e) => setFarmerName(e.target.value)}
-            className="tap-target w-full"
-          />
-        </div>
+            <div>
+              <Label className="mb-1" htmlFor="farmerName">
+                {t("onboarding_farmer_name")}
+              </Label>
+              <Input
+                id="farmerName"
+                value={farmerName}
+                onChange={(e) => setFarmerName(e.target.value)}
+                className="tap-target w-full"
+              />
+            </div>
+          </CardContent>
+        </Card>
 
-        <Separator />
-        <h2 className="text-base font-semibold">{t("onboarding_add_plot")}</h2>
+        <h2 className="-mb-1 text-base font-semibold">{t("onboarding_add_plot")}</h2>
 
+        <Card>
+          <CardContent className="flex flex-col gap-5">
         <div>
           <Label className="mb-1" htmlFor="plotName">
             {t("onboarding_plot_name")}
@@ -245,6 +250,8 @@ export default function OnboardingPage() {
             className="tap-target w-full"
           />
         </div>
+          </CardContent>
+        </Card>
 
         <Button type="submit" size="touch" disabled={submitting} className="mt-2 w-full">
           {t("onboarding_finish")}

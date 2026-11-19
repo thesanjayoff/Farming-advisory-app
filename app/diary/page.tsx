@@ -96,15 +96,21 @@ export default function DiaryPage() {
   return (
     <PageShell title={t("diary_title")} showBack>
       <div className="flex flex-col gap-4 pb-6">
-        <Card className="bg-brand-light">
-          <CardContent>
-            <h2 className="mb-2 text-sm font-semibold text-brand">{t("diary_profit_summary")}</h2>
-            <p className="text-sm">Expenses: ₹{summary.totalExpensesInr}</p>
-            <p className="text-sm">Labor: ₹{summary.totalLaborInr}</p>
-            <p className="text-sm">Sales: ₹{summary.totalSalesInr}</p>
-            <p className="text-sm font-semibold">Net: ₹{summary.netProfitInr}</p>
+        <Card
+          className="relative overflow-hidden border-none text-white shadow-[0_12px_28px_-10px_color-mix(in_srgb,var(--brand)_60%,transparent)]"
+          style={{ background: "linear-gradient(135deg, var(--brand) 0%, color-mix(in srgb, var(--brand) 70%, black 15%) 100%)" }}
+        >
+          <div className="pointer-events-none absolute -right-6 -top-8 size-32 rounded-full bg-white/10" aria-hidden />
+          <CardContent className="relative flex flex-col gap-1.5">
+            <h2 className="text-sm font-medium text-white/80">{t("diary_profit_summary")}</h2>
+            <p className="text-3xl font-semibold tracking-tight">₹{summary.netProfitInr}</p>
+            <div className="mt-1 grid grid-cols-3 gap-2 text-xs text-white/85">
+              <p>Expenses<br /><span className="font-medium text-white">₹{summary.totalExpensesInr}</span></p>
+              <p>Labor<br /><span className="font-medium text-white">₹{summary.totalLaborInr}</span></p>
+              <p>Sales<br /><span className="font-medium text-white">₹{summary.totalSalesInr}</span></p>
+            </div>
             {summary.totalYieldQuantity.map((y) => (
-              <p key={y.unit} className="text-xs text-foreground/70">
+              <p key={y.unit} className="text-xs text-white/70">
                 {t("diary_yield")}: {y.quantity} {y.unit}
               </p>
             ))}

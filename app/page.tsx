@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,10 +14,10 @@ import type { ResolvedTask } from "@/lib/calendar/types";
 import { seedDemoData } from "@/lib/seed/demoData";
 
 const QUICK_LINKS = [
-  { href: "/diary", emoji: "📓", labelKey: "nav_diary" as const },
-  { href: "/schemes", emoji: "🏛️", labelKey: "nav_schemes" as const },
-  { href: "/photo-help", emoji: "📷", labelKey: "photo_help_title" as const },
-  { href: "/settings", emoji: "⚙️", labelKey: "nav_settings" as const },
+  { href: "/diary", emoji: "📓", labelKey: "nav_diary" as const, tile: "bg-amber-100" },
+  { href: "/schemes", emoji: "🏛️", labelKey: "nav_schemes" as const, tile: "bg-sky-100" },
+  { href: "/photo-help", emoji: "📷", labelKey: "photo_help_title" as const, tile: "bg-rose-100" },
+  { href: "/settings", emoji: "⚙️", labelKey: "nav_settings" as const, tile: "bg-violet-100" },
 ];
 
 export default function Home() {
@@ -73,16 +73,32 @@ export default function Home() {
 
   return (
     <PageShell title={t("app_name")}>
-      <Card className="mb-4 border-none bg-brand-light">
-        <CardContent>
-          <p className="text-sm text-foreground/70">{farm.farmerName}</p>
-          <p className="text-lg font-semibold text-brand">{activePlot?.locationLabel ?? "—"}</p>
+      <Card
+        className="relative mb-5 overflow-hidden border-none text-white shadow-[0_12px_28px_-10px_color-mix(in_srgb,var(--brand)_60%,transparent)]"
+        style={{ background: "linear-gradient(135deg, var(--brand) 0%, color-mix(in srgb, var(--brand) 70%, black 15%) 100%)" }}
+      >
+        <div
+          className="pointer-events-none absolute -right-8 -top-10 size-40 rounded-full bg-white/10"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute -bottom-12 -left-6 size-32 rounded-full bg-white/5" aria-hidden />
+        <CardContent className="relative flex flex-col gap-2">
+          <p className="text-sm font-medium text-white/80">{farm.farmerName}</p>
+          <p className="flex items-center gap-1.5 text-xl font-semibold tracking-tight">
+            <MapPin className="size-5 shrink-0 text-white/80" aria-hidden />
+            {activePlot?.locationLabel ?? "—"}
+          </p>
           {activePlot && activePlot.crops.length > 0 && (
-            <p className="text-sm text-foreground/80">
-              {activePlot.crops
-                .map((c) => cropDisplayNames[c.cropId]?.[lang === "ta" ? "ta" : "en"] ?? c.cropId)
-                .join(", ")}
-            </p>
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {activePlot.crops.map((c) => (
+                <span
+                  key={c.id}
+                  className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium backdrop-blur-sm"
+                >
+                  {cropDisplayNames[c.cropId]?.[lang === "ta" ? "ta" : "en"] ?? c.cropId}
+                </span>
+              ))}
+            </div>
           )}
         </CardContent>
       </Card>
@@ -90,7 +106,10 @@ export default function Home() {
       <Card className="mb-4">
         <CardHeader className="flex-row items-center justify-between space-y-0">
           <CardTitle className="text-base">{t("calendar_title")}</CardTitle>
-          <Link href="/calendar" className="flex items-center text-sm font-medium text-brand">
+          <Link
+            href="/calendar"
+            className="flex items-center gap-0.5 text-sm font-medium text-brand transition-opacity hover:opacity-70"
+          >
             {t("calendar_title")}
             <ChevronRight className="size-4" aria-hidden />
           </Link>
@@ -101,7 +120,10 @@ export default function Home() {
           ) : (
             <ul className="space-y-2">
               {upcoming.slice(0, 3).map((task) => (
-                <li key={task.id} className="rounded-lg border border-border bg-background p-3">
+                <li
+                  key={task.id}
+                  className="rounded-xl border border-border/70 bg-muted/40 p-3 transition-colors hover:bg-muted/70"
+                >
                   <p className="font-medium">{lang === "ta" ? task.nameTa : task.nameEn}</p>
                   <p className="text-xs text-muted-foreground">
                     {t("calendar_due")}: {task.dueDate}
@@ -113,10 +135,13 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <Card className="mb-4">
+      <Card className="mb-5">
         <CardHeader className="flex-row items-center justify-between space-y-0">
           <CardTitle className="text-base">{t("weather_title")}</CardTitle>
-          <Link href="/weather" className="flex items-center text-sm font-medium text-brand">
+          <Link
+            href="/weather"
+            className="flex items-center gap-0.5 text-sm font-medium text-brand transition-opacity hover:opacity-70"
+          >
             {t("weather_title")}
             <ChevronRight className="size-4" aria-hidden />
           </Link>
@@ -126,14 +151,17 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <section className="grid grid-cols-4 gap-2">
+      <section className="grid grid-cols-4 gap-3">
         {QUICK_LINKS.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="tap-target flex flex-col items-center justify-center gap-1 rounded-xl border border-border bg-card py-3 text-center text-xs font-medium shadow-sm transition-colors hover:bg-accent"
+            className="tap-target group flex flex-col items-center justify-center gap-1.5 text-center text-xs font-medium text-foreground/80 transition-transform active:scale-95"
           >
-            <span className="text-2xl" aria-hidden>
+            <span
+              className={`flex size-14 items-center justify-center rounded-2xl text-2xl shadow-sm transition-shadow group-active:shadow-none ${link.tile}`}
+              aria-hidden
+            >
               {link.emoji}
             </span>
             <span>{t(link.labelKey)}</span>

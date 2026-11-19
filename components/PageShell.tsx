@@ -28,23 +28,23 @@ export function PageShell({
 
   return (
     <div className="flex min-h-screen flex-col bg-muted/40">
-      <header className="no-print sticky top-0 z-20 flex items-center justify-between gap-2 border-b border-border bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="flex items-center gap-1">
+      <header className="no-print sticky top-0 z-20 flex items-center justify-between gap-2 border-b border-border/70 bg-background/95 px-4 py-3 shadow-[0_1px_0_rgba(0,0,0,0.03),0_4px_12px_-8px_rgba(0,0,0,0.06)] backdrop-blur supports-[backdrop-filter]:bg-background/80">
+        <div className="flex items-center gap-1.5">
           {showBack && (
             <Link
               href="/"
-              className="tap-target -ml-2 flex items-center justify-center rounded-full text-foreground"
+              className="tap-target -ml-2 flex items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted"
               aria-label={t("common_back")}
             >
               <ChevronLeft className="size-6" aria-hidden />
             </Link>
           )}
-          <h1 className="text-lg font-semibold text-brand">{title}</h1>
+          <h1 className="text-lg font-semibold tracking-tight text-brand">{title}</h1>
         </div>
         <Select value={lang} onValueChange={(v) => v && setLang(v as typeof lang)}>
           <SelectTrigger
             aria-label={t("settings_language")}
-            className="tap-target h-10 w-auto rounded-full border-border bg-background px-3 text-sm"
+            className="tap-target h-10 w-auto rounded-full border-border/70 bg-muted px-3 text-sm font-medium shadow-none"
           >
             <SelectValue />
           </SelectTrigger>
