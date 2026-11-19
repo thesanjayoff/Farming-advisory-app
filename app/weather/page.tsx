@@ -1,8 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Send, Droplets, Wind, TriangleAlert } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { OfficialWeatherLinks } from "@/components/OfficialWeatherLinks";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useI18n } from "@/lib/i18n/context";
 import { useFarmProfile } from "@/lib/hooks/useFarmProfile";
 import { useWeather } from "@/lib/hooks/useWeather";
@@ -19,9 +24,15 @@ function ageLabel(ms: number | null): string {
 }
 
 const SEVERITY_STYLE: Record<WeatherAlert["severity"], string> = {
-  info: "border-neutral-200 bg-white",
+  info: "border-border bg-card",
   warning: "border-amber-300 bg-amber-50",
   danger: "border-red-300 bg-red-50",
+};
+
+const SEVERITY_BADGE: Record<WeatherAlert["severity"], "secondary" | "default" | "destructive"> = {
+  info: "secondary",
+  warning: "default",
+  danger: "destructive",
 };
 
 export default function WeatherPage() {
@@ -64,7 +75,7 @@ export default function WeatherPage() {
   if (loading || weatherLoading) {
     return (
       <PageShell title={t("weather_title")} showBack>
-        <p className="py-10 text-center text-neutral-500">{t("common_loading")}</p>
+        <p className="py-10 text-center text-muted-foreground">{t("common_loading")}</p>
       </PageShell>
     );
   }
@@ -72,7 +83,7 @@ export default function WeatherPage() {
   if (!activePlot) {
     return (
       <PageShell title={t("weather_title")} showBack>
-        <p className="py-10 text-center text-neutral-500">{t("common_data_gap")}</p>
+        <p className="py-10 text-center text-muted-foreground">{t("common_data_gap")}</p>
       </PageShell>
     );
   }
@@ -80,9 +91,9 @@ export default function WeatherPage() {
   if (error || !forecast) {
     return (
       <PageShell title={t("weather_title")} showBack>
-        <p className="rounded-lg border border-neutral-200 bg-white p-4 text-neutral-600">
-          {t("common_data_gap")}
-        </p>
+        <Alert>
+          <AlertDescription>{t("common_data_gap")}</AlertDescription>
+        </Alert>
       </PageShell>
     );
   }
@@ -91,35 +102,52 @@ export default function WeatherPage() {
     <PageShell title={t("weather_title")} showBack>
       <div className="flex flex-col gap-4 pb-4">
         {stale && (
-          <p className="rounded-lg bg-amber-100 p-3 text-sm text-amber-900">
-            {t("weather_stale_warning")} ({t("weather_last_updated")}: {ageLabel(ageMs)})
-          </p>
+          <Alert className="border-amber-300 bg-amber-50 text-amber-900">
+            <AlertDescription className="text-amber-900">
+              {t("weather_stale_warning")} ({t("weather_last_updated")}: {ageLabel(ageMs)})
+            </AlertDescription>
+          </Alert>
         )}
 
         <section>
-          <h2 className="mb-2 text-base font-semibold">⚠️ Alerts</h2>
+          <h2 className="mb-2 flex items-center gap-1.5 text-base font-semibold">
+            <TriangleAlert className="size-4 text-amber-600" aria-hidden /> Alerts
+          </h2>
           {alerts.length === 0 ? (
-            <p className="text-sm text-neutral-500">{t("weather_informational_notice")}</p>
+            <p className="text-sm text-muted-foreground">{t("weather_informational_notice")}</p>
           ) : (
             <ul className="flex flex-col gap-2">
               {alerts.map((a) => (
-                <li key={a.id} className={`rounded-lg border p-3 text-sm ${SEVERITY_STYLE[a.severity]}`}>
-                  <p className="font-medium">{t(a.messageKey as DictKey)}</p>
-                  <p className="mt-1 text-xs text-neutral-600">{a.explanation}</p>
-                  <p className="mt-1 text-xs text-neutral-500">{t("common_source")}: rules-engine + Open-Meteo · {a.dateIso}</p>
+                <li key={a.id}>
+                  <Card className={`${SEVERITY_STYLE[a.severity]} py-3`}>
+                    <CardContent className="flex flex-col gap-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="font-medium">{t(a.messageKey as DictKey)}</p>
+                        <Badge variant={SEVERITY_BADGE[a.severity]} className="shrink-0">
+                          {a.severity}
+                        </Badge>
+                      </div>
+                      <p className="text-xs text-foreground/70">{a.explanation}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t("common_source")}: rules-engine + Open-Meteo · {a.dateIso}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </li>
               ))}
             </ul>
           )}
           {alerts.length > 0 && (
             <div className="mt-2 flex flex-col gap-1">
-              <button
+              <Button
+                variant="outline"
+                className="self-start border-brand text-brand hover:bg-brand-light"
                 onClick={() => sendViaTelegram(alerts)}
-                className="tap-target self-start rounded-lg border border-brand px-3 text-sm font-medium text-brand"
               >
-                📨 {lang === "ta" ? "Telegram-இல் அனுப்பு" : "Send via Telegram"}
-              </button>
-              {sendStatus && <p className="text-xs text-neutral-500">{sendStatus}</p>}
+                <Send className="size-4" aria-hidden />
+                {lang === "ta" ? "Telegram-இல் அனுப்பு" : "Send via Telegram"}
+              </Button>
+              {sendStatus && <p className="text-xs text-muted-foreground">{sendStatus}</p>}
             </div>
           )}
         </section>
@@ -128,43 +156,49 @@ export default function WeatherPage() {
           <h2 className="mb-2 text-base font-semibold">{t("weather_forecast")}</h2>
           <div className="flex gap-2 overflow-x-auto pb-2">
             {forecast.daily.map((day) => (
-              <div key={day.date} className="min-w-[110px] rounded-lg border border-neutral-200 bg-white p-3 text-sm">
-                <p className="font-medium">{day.date.slice(5)}</p>
-                <p>{day.tempMinC.toFixed(0)}° / {day.tempMaxC.toFixed(0)}°C</p>
-                <p className="text-xs text-neutral-500">
-                  {t("weather_rain_chance")}: {day.precipitationProbabilityMaxPercent ?? "—"}%
-                </p>
-                <p className="text-xs text-neutral-500">💧 {day.precipitationSumMm.toFixed(1)}mm</p>
-                <p className="text-xs text-neutral-500">💨 {day.windSpeedMaxKmh.toFixed(0)}km/h</p>
-                {day.et0Mm != null && (
-                  <p className="text-xs text-neutral-500">{t("weather_et0")}: {day.et0Mm.toFixed(1)}mm</p>
-                )}
-                {day.soilMoisture0to7cm != null && (
-                  <p className="text-xs text-neutral-500">
-                    {t("weather_soil_moisture")}: {(day.soilMoisture0to7cm * 100).toFixed(0)}%
+              <Card key={day.date} className="min-w-[120px] py-3">
+                <CardContent className="flex flex-col gap-0.5 text-sm">
+                  <p className="font-medium">{day.date.slice(5)}</p>
+                  <p>{day.tempMinC.toFixed(0)}° / {day.tempMaxC.toFixed(0)}°C</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t("weather_rain_chance")}: {day.precipitationProbabilityMaxPercent ?? "—"}%
                   </p>
-                )}
-              </div>
+                  <p className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <Droplets className="size-3" aria-hidden /> {day.precipitationSumMm.toFixed(1)}mm
+                  </p>
+                  <p className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <Wind className="size-3" aria-hidden /> {day.windSpeedMaxKmh.toFixed(0)}km/h
+                  </p>
+                  {day.et0Mm != null && (
+                    <p className="text-xs text-muted-foreground">{t("weather_et0")}: {day.et0Mm.toFixed(1)}mm</p>
+                  )}
+                  {day.soilMoisture0to7cm != null && (
+                    <p className="text-xs text-muted-foreground">
+                      {t("weather_soil_moisture")}: {(day.soilMoisture0to7cm * 100).toFixed(0)}%
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
 
         {stage && (
-          <p className="text-xs text-neutral-500">
+          <p className="text-xs text-muted-foreground">
             {lang === "ta" ? stage.nameTa : stage.nameEn} · day {stage.dayFromSowing}
           </p>
         )}
 
         <OfficialWeatherLinks />
 
-        <p className="text-xs text-neutral-400">
+        <p className="text-xs text-muted-foreground/70">
           {t("weather_attribution")} ·{" "}
           <a href={forecast.sourceUrl} target="_blank" rel="noreferrer" className="underline">
             {forecast.sourceUrl}
           </a>{" "}
           · {t("common_retrieved")}: {new Date(forecast.retrievedAt).toLocaleString()}
         </p>
-        <p className="text-xs text-neutral-400">{t("weather_informational_notice")}</p>
+        <p className="text-xs text-muted-foreground/70">{t("weather_informational_notice")}</p>
       </div>
     </PageShell>
   );

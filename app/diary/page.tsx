@@ -1,8 +1,20 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { Download, Mic, Trash2 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { VoiceNoteRecorder } from "@/components/VoiceNoteRecorder";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useI18n } from "@/lib/i18n/context";
 import { useFarmProfile } from "@/lib/hooks/useFarmProfile";
 import { getDiaryForPlot, saveDiaryEntry, deleteDiaryEntry } from "@/lib/db/client";
@@ -76,7 +88,7 @@ export default function DiaryPage() {
   if (!activePlot) {
     return (
       <PageShell title={t("diary_title")} showBack>
-        <p className="py-10 text-center text-neutral-500">{t("common_data_gap")}</p>
+        <p className="py-10 text-center text-muted-foreground">{t("common_data_gap")}</p>
       </PageShell>
     );
   }
@@ -84,73 +96,96 @@ export default function DiaryPage() {
   return (
     <PageShell title={t("diary_title")} showBack>
       <div className="flex flex-col gap-4 pb-6">
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="mb-2 text-sm font-semibold">{t("diary_profit_summary")}</h2>
-          <p className="text-sm">Expenses: ₹{summary.totalExpensesInr}</p>
-          <p className="text-sm">Labor: ₹{summary.totalLaborInr}</p>
-          <p className="text-sm">Sales: ₹{summary.totalSalesInr}</p>
-          <p className="text-sm font-semibold">Net: ₹{summary.netProfitInr}</p>
-          {summary.totalYieldQuantity.map((y) => (
-            <p key={y.unit} className="text-xs text-neutral-500">
-              {t("diary_yield")}: {y.quantity} {y.unit}
-            </p>
-          ))}
-        </section>
-
-        <form onSubmit={addEntry} className="flex flex-col gap-2 rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="text-sm font-semibold">{t("diary_add_entry")}</h2>
-          <select value={type} onChange={(e) => setType(e.target.value as DiaryEntry["type"])} className="tap-target rounded border border-neutral-300 px-2">
-            {TYPES.map((ty) => (
-              <option key={ty} value={ty}>
-                {t(`diary_${ty}` as const)}
-              </option>
+        <Card className="bg-brand-light">
+          <CardContent>
+            <h2 className="mb-2 text-sm font-semibold text-brand">{t("diary_profit_summary")}</h2>
+            <p className="text-sm">Expenses: ₹{summary.totalExpensesInr}</p>
+            <p className="text-sm">Labor: ₹{summary.totalLaborInr}</p>
+            <p className="text-sm">Sales: ₹{summary.totalSalesInr}</p>
+            <p className="text-sm font-semibold">Net: ₹{summary.netProfitInr}</p>
+            {summary.totalYieldQuantity.map((y) => (
+              <p key={y.unit} className="text-xs text-foreground/70">
+                {t("diary_yield")}: {y.quantity} {y.unit}
+              </p>
             ))}
-          </select>
-          <input
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder={t("diary_add_entry")}
-            className="tap-target rounded border border-neutral-300 px-2"
-          />
-          <input
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="₹"
-            inputMode="numeric"
-            className="tap-target rounded border border-neutral-300 px-2"
-          />
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="tap-target rounded border border-neutral-300 px-2" />
-          <VoiceNoteRecorder onSaved={setPendingVoiceRef} />
-          {pendingVoiceRef && <p className="text-xs text-green-700">🎙️ voice note attached</p>}
-          <button type="submit" className="tap-target rounded bg-brand font-medium text-white">
-            {t("common_add")}
-          </button>
-        </form>
+          </CardContent>
+        </Card>
 
-        <button onClick={exportDiary} className="tap-target rounded-lg border border-brand text-sm font-medium text-brand">
+        <Card>
+          <CardContent>
+            <form onSubmit={addEntry} className="flex flex-col gap-2">
+              <h2 className="text-sm font-semibold">{t("diary_add_entry")}</h2>
+              <Select value={type} onValueChange={(v) => v && setType(v as DiaryEntry["type"])}>
+                <SelectTrigger className="tap-target w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {TYPES.map((ty) => (
+                    <SelectItem key={ty} value={ty}>
+                      {t(`diary_${ty}` as const)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Input
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder={t("diary_add_entry")}
+                className="tap-target"
+              />
+              <Input
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="₹"
+                inputMode="numeric"
+                className="tap-target"
+              />
+              <Input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="tap-target" />
+              <VoiceNoteRecorder onSaved={setPendingVoiceRef} />
+              {pendingVoiceRef && (
+                <p className="flex items-center gap-1 text-xs text-green-700">
+                  <Mic className="size-3.5" aria-hidden /> voice note attached
+                </p>
+              )}
+              <Button type="submit" size="touch" className="w-full">
+                {t("common_add")}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+
+        <Button variant="outline" className="w-full border-brand text-brand hover:bg-brand-light" onClick={exportDiary}>
+          <Download className="size-4" aria-hidden />
           {t("diary_export")}
-        </button>
+        </Button>
 
         <ul className="flex flex-col gap-2">
           {entries
             .sort((a, b) => b.date.localeCompare(a.date))
             .map((entry) => (
-              <li key={entry.id} className="rounded-lg border border-neutral-200 bg-white p-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="font-medium">
-                      {t(`diary_${entry.type}` as const)}: {entry.description}
-                    </p>
-                    <p className="text-xs text-neutral-500">
-                      {entry.date} {entry.amountInr != null && `· ₹${entry.amountInr}`}
-                      {entry.voiceNoteRef && " · 🎙️"}
-                      {!entry.synced && " · offline"}
-                    </p>
-                  </div>
-                  <button onClick={() => removeEntry(entry.id)} className="tap-target text-sm text-red-600">
-                    {t("common_delete")}
-                  </button>
-                </div>
+              <li key={entry.id}>
+                <Card className="py-3">
+                  <CardContent className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="font-medium">
+                        {t(`diary_${entry.type}` as const)}: {entry.description}
+                      </p>
+                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+                        <span>{entry.date}</span>
+                        {entry.amountInr != null && <span>· ₹{entry.amountInr}</span>}
+                        {entry.voiceNoteRef && <Mic className="size-3.5" aria-hidden />}
+                        {!entry.synced && <Badge variant="secondary">offline</Badge>}
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => removeEntry(entry.id)}
+                      className="tap-target flex shrink-0 items-center justify-center rounded-full text-red-600"
+                      aria-label={t("common_delete")}
+                    >
+                      <Trash2 className="size-4" aria-hidden />
+                    </button>
+                  </CardContent>
+                </Card>
               </li>
             ))}
         </ul>

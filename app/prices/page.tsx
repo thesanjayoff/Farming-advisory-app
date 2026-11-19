@@ -3,6 +3,19 @@
 import { useMemo, useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { CedaAttribution } from "@/components/CedaAttribution";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useI18n } from "@/lib/i18n/context";
 import { usePrices } from "@/lib/hooks/usePrices";
 import { averageModalPrice, computeTransportNet, labelVsAverage } from "@/lib/prices/trends";
@@ -49,65 +62,78 @@ export default function PricesPage() {
   return (
     <PageShell title={t("price_title")} showBack>
       <div className="flex flex-col gap-4 pb-6">
-        <select
+        <Select
           value={commodity}
-          onChange={(e) => {
-            setCommodity(e.target.value);
+          onValueChange={(v) => {
+            if (!v) return;
+            setCommodity(v);
             setAlertSaved(false);
           }}
-          className="tap-target w-full rounded-lg border border-neutral-300 px-3"
         >
-          {COMMODITIES.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger className="tap-target w-full">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {COMMODITIES.map((c) => (
+              <SelectItem key={c} value={c}>
+                {c}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-        <p className="rounded-lg bg-amber-50 p-3 text-xs text-amber-900">{t("price_wholesale_disclaimer")}</p>
+        <Alert className="border-amber-300 bg-amber-50">
+          <AlertDescription className="text-amber-900">{t("price_wholesale_disclaimer")}</AlertDescription>
+        </Alert>
 
         {loading ? (
-          <p className="py-6 text-center text-neutral-500">{t("common_loading")}</p>
+          <p className="py-6 text-center text-muted-foreground">{t("common_loading")}</p>
         ) : !result || result.records.length === 0 ? (
-          <p className="rounded-lg border border-neutral-200 bg-white p-4 text-neutral-600">
-            {result?.gapReason ?? t("common_data_gap")}
-          </p>
+          <Alert>
+            <AlertDescription>{result?.gapReason ?? t("common_data_gap")}</AlertDescription>
+          </Alert>
         ) : (
           <>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-muted-foreground">
               {t("price_markets_reporting")}: {result.marketsReporting} · provider: {result.provider}
               {result.isFallback ? " (fallback)" : ""}
             </p>
             {result.isFallback && result.provider === "ceda" && <CedaAttribution />}
             {result.provider === "demo-seed" && (
-              <p className="rounded-lg bg-blue-50 p-2 text-xs text-blue-900">
-                Sample/demo data for first-run exploration — not a real current price.
-              </p>
+              <Alert className="border-blue-200 bg-blue-50">
+                <AlertDescription className="text-blue-900">
+                  Sample/demo data for first-run exploration — not a real current price.
+                </AlertDescription>
+              </Alert>
             )}
 
             <ul className="flex flex-col gap-2">
               {result.records.map((r, i) => {
                 const trend = average ? labelVsAverage(r.modalPriceInrPerQuintal, average) : null;
                 return (
-                  <li key={`${r.market}-${i}`} className="rounded-lg border border-neutral-200 bg-white p-3">
-                    <p className="font-medium">{r.market}{r.district ? `, ${r.district}` : ""}</p>
-                    <p className="text-sm">
-                      {t("price_modal")}: ₹{r.modalPriceInrPerQuintal}/quintal
-                    </p>
-                    <p className="text-xs text-neutral-500">
-                      {t("price_min")} ₹{r.minPriceInrPerQuintal} · {t("price_max")} ₹{r.maxPriceInrPerQuintal}
-                    </p>
-                    {r.arrivalQuantityQuintal != null && (
-                      <p className="text-xs text-neutral-500">
-                        {t("price_arrival")}: {r.arrivalQuantityQuintal} q
-                      </p>
-                    )}
-                    <p className="text-xs text-neutral-500">
-                      {t("common_as_of")}: {r.priceDate} · {t("common_source")}: {r.provider}
-                    </p>
-                    {trend && (
-                      <p className="mt-1 text-xs font-medium text-brand">{t(TREND_LABEL_KEY[trend])}</p>
-                    )}
+                  <li key={`${r.market}-${i}`}>
+                    <Card className="py-3">
+                      <CardContent className="flex flex-col gap-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className="font-medium">{r.market}{r.district ? `, ${r.district}` : ""}</p>
+                          {trend && <Badge variant="secondary">{t(TREND_LABEL_KEY[trend])}</Badge>}
+                        </div>
+                        <p className="text-sm">
+                          {t("price_modal")}: ₹{r.modalPriceInrPerQuintal}/quintal
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {t("price_min")} ₹{r.minPriceInrPerQuintal} · {t("price_max")} ₹{r.maxPriceInrPerQuintal}
+                        </p>
+                        {r.arrivalQuantityQuintal != null && (
+                          <p className="text-xs text-muted-foreground">
+                            {t("price_arrival")}: {r.arrivalQuantityQuintal} q
+                          </p>
+                        )}
+                        <p className="text-xs text-muted-foreground">
+                          {t("common_as_of")}: {r.priceDate} · {t("common_source")}: {r.provider}
+                        </p>
+                      </CardContent>
+                    </Card>
                   </li>
                 );
               })}
@@ -124,55 +150,78 @@ export default function PricesPage() {
           {t("price_official_link")} (UPAg)
         </a>
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="mb-2 text-sm font-semibold">{t("price_transport_calc")}</h2>
-          <div className="grid grid-cols-3 gap-2 text-sm">
-            <label className="flex flex-col gap-1">
-              km
-              <input value={distanceKm} onChange={(e) => setDistanceKm(e.target.value)} className="tap-target rounded border border-neutral-300 px-2" />
-            </label>
-            <label className="flex flex-col gap-1">
-              ₹/q/km
-              <input value={costPerKm} onChange={(e) => setCostPerKm(e.target.value)} className="tap-target rounded border border-neutral-300 px-2" />
-            </label>
-            <label className="flex flex-col gap-1">
-              quintals
-              <input value={quintals} onChange={(e) => setQuintals(e.target.value)} className="tap-target rounded border border-neutral-300 px-2" />
-            </label>
-          </div>
-          {average != null && (
-            <p className="mt-2 text-sm">
-              Net ≈ ₹
-              {computeTransportNet({
-                mandiPriceInrPerQuintal: average,
-                distanceKm: Number(distanceKm) || 0,
-                transportCostInrPerQuintalPerKm: Number(costPerKm) || 0,
-                quintals: Number(quintals) || 0,
-              }).netPriceInrPerQuintal.toFixed(0)}
-              /quintal after transport
-            </p>
-          )}
-        </section>
+        <Card>
+          <CardContent>
+            <h2 className="mb-2 text-sm font-semibold">{t("price_transport_calc")}</h2>
+            <div className="grid grid-cols-3 gap-2 text-sm">
+              <div className="flex flex-col gap-1">
+                <Label className="text-xs text-muted-foreground">km</Label>
+                <Input
+                  value={distanceKm}
+                  onChange={(e) => setDistanceKm(e.target.value)}
+                  inputMode="decimal"
+                  className="tap-target"
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <Label className="text-xs text-muted-foreground">₹/q/km</Label>
+                <Input
+                  value={costPerKm}
+                  onChange={(e) => setCostPerKm(e.target.value)}
+                  inputMode="decimal"
+                  className="tap-target"
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <Label className="text-xs text-muted-foreground">quintals</Label>
+                <Input
+                  value={quintals}
+                  onChange={(e) => setQuintals(e.target.value)}
+                  inputMode="decimal"
+                  className="tap-target"
+                />
+              </div>
+            </div>
+            {average != null && (
+              <p className="mt-2 text-sm">
+                Net ≈ ₹
+                {computeTransportNet({
+                  mandiPriceInrPerQuintal: average,
+                  distanceKm: Number(distanceKm) || 0,
+                  transportCostInrPerQuintalPerKm: Number(costPerKm) || 0,
+                  quintals: Number(quintals) || 0,
+                }).netPriceInrPerQuintal.toFixed(0)}
+                /quintal after transport
+              </p>
+            )}
+          </CardContent>
+        </Card>
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="mb-2 text-sm font-semibold">{t("price_set_alert")}</h2>
-          <div className="flex gap-2">
-            <select value={alertDirection} onChange={(e) => setAlertDirection(e.target.value as "above" | "below")} className="tap-target rounded border border-neutral-300 px-2 text-sm">
-              <option value="above">above</option>
-              <option value="below">below</option>
-            </select>
-            <input
-              value={alertPrice}
-              onChange={(e) => setAlertPrice(e.target.value)}
-              placeholder="₹/quintal"
-              className="tap-target flex-1 rounded border border-neutral-300 px-2"
-            />
-            <button onClick={saveAlert} className="tap-target rounded bg-brand px-4 text-sm font-medium text-white">
-              {t("common_save")}
-            </button>
-          </div>
-          {alertSaved && <p className="mt-1 text-xs text-green-700">✓ saved</p>}
-        </section>
+        <Card>
+          <CardContent>
+            <h2 className="mb-2 text-sm font-semibold">{t("price_set_alert")}</h2>
+            <div className="flex gap-2">
+              <Select value={alertDirection} onValueChange={(v) => v && setAlertDirection(v as "above" | "below")}>
+                <SelectTrigger className="tap-target w-28">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="above">above</SelectItem>
+                  <SelectItem value="below">below</SelectItem>
+                </SelectContent>
+              </Select>
+              <Input
+                value={alertPrice}
+                onChange={(e) => setAlertPrice(e.target.value)}
+                placeholder="₹/quintal"
+                inputMode="decimal"
+                className="tap-target flex-1"
+              />
+              <Button onClick={saveAlert}>{t("common_save")}</Button>
+            </div>
+            {alertSaved && <p className="mt-1 text-xs text-green-700">✓ saved</p>}
+          </CardContent>
+        </Card>
       </div>
     </PageShell>
   );

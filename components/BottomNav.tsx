@@ -25,18 +25,19 @@ export function BottomNav() {
 
   return (
     <nav
-      className="no-print sticky bottom-0 z-20 border-t border-neutral-200 bg-white"
+      className="no-print sticky bottom-0 z-20 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur supports-[backdrop-filter]:bg-background/80"
       aria-label="Main navigation"
     >
-      <ul className="flex">
+      <ul className="flex px-1 py-1.5">
         {ITEMS.map((item) => {
           const active = pathname === item.href;
           return (
             <li key={item.href} className="flex-1">
               <Link
                 href={item.href}
-                className={`tap-target flex flex-col items-center justify-center gap-0.5 py-2 text-xs font-medium ${
-                  active ? "text-brand" : "text-neutral-500"
+                aria-current={active ? "page" : undefined}
+                className={`tap-target mx-0.5 flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-[11px] font-medium transition-colors ${
+                  active ? "bg-accent text-accent-foreground" : "text-muted-foreground hover:bg-muted"
                 }`}
               >
                 <span className="text-2xl" aria-hidden>
