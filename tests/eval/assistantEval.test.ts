@@ -105,7 +105,6 @@ describe("assistant evaluation set — routing accuracy", () => {
     fs.mkdirSync(outDir, { recursive: true });
     fs.writeFileSync(path.join(outDir, "assistant_eval_report.json"), JSON.stringify(report, null, 2));
 
-    // eslint-disable-next-line no-console
     console.log(`[eval] overall routing accuracy: ${(overall * 100).toFixed(1)}% (${results.length} items)`);
 
     // Soft overall bar — calibrated against the current KB/retrieval
