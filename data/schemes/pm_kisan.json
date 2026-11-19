@@ -1,0 +1,14 @@
+{
+  "id": "pm_kisan",
+  "nameEn": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+  "nameTa": "பிஎம்-கிசான் (பிரதான் மந்திரி கிசான் சம்மான் நிதி)",
+  "summaryEn": "A central government scheme that gives eligible landholding farmer families direct income support, paid in instalments straight to their bank account.",
+  "summaryTa": "நிலம் வைத்திருக்கும் தகுதியான விவசாய குடும்பங்களுக்கு நேரடியாக வங்கி கணக்கில் தவணைகளாக நிதி உதவி வழங்கும் மத்திய அரசு திட்டம்.",
+  "eligibilitySummaryEn": "Broadly for landholding farmer families, subject to exclusion categories (e.g. certain income-tax payers, institutional landholders) set by the scheme. Exact eligibility rules can change — check the official portal.",
+  "eligibilitySummaryTa": "பொதுவாக நிலம் வைத்திருக்கும் விவசாய குடும்பங்களுக்கு, திட்டம் நிர்ணயிக்கும் சில விதிவிலக்கு பிரிவுகளுக்கு உட்பட்டது. தகுதி விதிகள் மாறக்கூடும் — அதிகாரபூர்வ போர்டலில் சரிபார்க்கவும்.",
+  "howToApplyEn": "Apply or check status online via the official PM-KISAN portal, or through your Village Administrative Officer / Common Service Centre.",
+  "howToApplyTa": "அதிகாரபூர்வ PM-KISAN போர்டல் வழியாக ஆன்லைனில் விண்ணப்பிக்கலாம் அல்லது நிலையை சரிபார்க்கலாம், அல்லது உங்கள் கிராம நிர்வாக அதிகாரி / பொது சேவை மையம் வழியாகவும் செய்யலாம்.",
+  "officialUrl": "https://pmkisan.gov.in/",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "kisan_credit_card",
+  "nameEn": "Kisan Credit Card (KCC)",
+  "nameTa": "கிசான் கிரெடிட் கார்டு (KCC)",
+  "summaryEn": "A credit scheme that gives farmers access to short-term loans from banks for cultivation expenses, post-harvest needs, and some allied activities, usually at a subsidised interest rate, through a single revolving credit card/account.",
+  "summaryTa": "விவசாயிகள் தங்கள் பயிரிடும் செலவுகள், அறுவடைக்கு பிந்தைய தேவைகள் மற்றும் சில தொடர்புடைய செயல்பாடுகளுக்கு வங்கிகளிடமிருந்து குறுகிய கால கடன் பெற உதவும் திட்டம். இது பொதுவாக மானிய வட்டி விகிதத்தில், ஒரு சுழற்சி கடன் அட்டை/கணக்கு மூலம் வழங்கப்படும்.",
+  "eligibilitySummaryEn": "Broadly for farmers who own or cultivate land (including tenant farmers and sharecroppers in many bank schemes), subject to each bank's own documentation and verification process. Exact loan limits, interest subsidy, and eligibility conditions vary by bank — check with your bank or the official scheme page.",
+  "eligibilitySummaryTa": "நிலம் வைத்திருக்கும் அல்லது பயிரிடும் விவசாயிகளுக்கு பொதுவாக பொருந்தும் (பல வங்கி திட்டங்களில் குத்தகை விவசாயிகள் மற்றும் பங்கு விவசாயிகளும் அடங்கும்), ஒவ்வொரு வங்கியின் சொந்த ஆவண மற்றும் சரிபார்ப்பு முறைக்கு உட்பட்டது. கடன் வரம்பு, வட்டி மானியம், தகுதி நிபந்தனைகள் வங்கிக்கு வங்கி மாறுபடும் — உங்கள் வங்கி அல்லது அதிகாரபூர்வ திட்டப் பக்கத்தில் சரிபார்க்கவும்.",
+  "howToApplyEn": "Apply at any participating bank branch (nationalised, cooperative, or regional rural bank) with your land and identity documents, or check current application options on the official scheme page.",
+  "howToApplyTa": "உங்கள் நில மற்றும் அடையாள ஆவணங்களுடன் பங்கேற்கும் எந்த வங்கி கிளையிலும் (தேசியமயமாக்கப்பட்ட, கூட்டுறவு, அல்லது பிராந்திய கிராமீண வங்கி) விண்ணப்பிக்கவும், அல்லது அதிகாரபூர்வ திட்டப் பக்கத்தில் தற்போதைய விண்ணப்ப வழிகளை சரிபார்க்கவும்.",
+  "officialUrl": "https://www.myscheme.gov.in/schemes/kcc",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}

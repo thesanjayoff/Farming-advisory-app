@@ -1,0 +1,14 @@
+{
+  "id": "enam",
+  "nameEn": "e-NAM (National Agriculture Market)",
+  "nameTa": "இ-நாம் (தேசிய வேளாண் சந்தை)",
+  "summaryEn": "An online trading platform that links existing physical mandis (APMC markets) across states into one unified national market, letting buyers and sellers see prices and trade across markets electronically. It is a market-linkage and price-transparency platform, not a subsidy or cash-benefit scheme.",
+  "summaryTa": "பல மாநிலங்களில் உள்ள ஏற்கனவே இருக்கும் இயற்பியல் சந்தைகளை (APMC சந்தைகள்) ஒன்றிணைத்து, வாங்குபவர்களும் விற்பவர்களும் மின்னணு முறையில் விலைகளை பார்த்து வர்த்தகம் செய்ய உதவும் ஆன்லைன் தளம். இது ஒரு சந்தை இணைப்பு மற்றும் விலை வெளிப்படைத்தன்மை தளம், மானியம் அல்லது பண உதவி திட்டம் அல்ல.",
+  "eligibilitySummaryEn": "Not an individual benefit a farmer 'applies for' in the usual sense — it is a trading platform used through registered mandis, traders, and commission agents. A farmer typically accesses it by selling through a mandi that is already onboarded to e-NAM. Check with your local mandi whether it is e-NAM enabled.",
+  "eligibilitySummaryTa": "இது வழக்கமான அர்த்தத்தில் ஒரு விவசாயி 'விண்ணப்பிக்கும்' தனிப்பட்ட பலன் அல்ல — பதிவு செய்யப்பட்ட சந்தைகள், வர்த்தகர்கள், கமிஷன் முகவர்கள் வழியாக பயன்படுத்தப்படும் வர்த்தக தளம். ஒரு விவசாயி பொதுவாக ஏற்கனவே e-NAM இல் இணைக்கப்பட்ட சந்தை வழியாக விற்பனை செய்வதன் மூலம் இதை அணுகுவார். உங்கள் உள்ளூர் சந்தை e-NAM இணைக்கப்பட்டதா என சரிபார்க்கவும்.",
+  "howToApplyEn": "There is no separate 'application' for a farmer in most cases; ask your local mandi or commission agent whether it trades through e-NAM, or check the official portal for the list of onboarded mandis.",
+  "howToApplyTa": "பெரும்பாலான சந்தர்ப்பங்களில் விவசாயிக்கு தனி 'விண்ணப்பம்' இல்லை; உங்கள் உள்ளூர் சந்தை அல்லது கமிஷன் முகவரிடம் அது e-NAM வழியாக வர்த்தகம் செய்கிறதா என கேளுங்கள், அல்லது இணைக்கப்பட்ட சந்தைகளின் பட்டியலை அதிகாரபூர்வ போர்டலில் சரிபார்க்கவும்.",
+  "officialUrl": "https://www.enam.gov.in/",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "pm_kusum",
+  "nameEn": "PM-KUSUM",
+  "nameTa": "பிஎம்-குசும்",
+  "summaryEn": "A central government scheme that supports farmers in installing solar-powered irrigation pumps and setting up small grid-connected solar power plants on their land, reducing diesel/electricity costs and, for grid-connected components, allowing surplus power to be sold.",
+  "summaryTa": "விவசாயிகள் தங்கள் நிலத்தில் சூரிய சக்தி நீர்ப்பாசன பம்புகளை நிறுவவும், சிறிய கிரிட்-இணைந்த சூரிய சக்தி நிலையங்களை அமைக்கவும் உதவும் மத்திய அரசு திட்டம். இது டீசல்/மின்சார செலவை குறைக்கும், கிரிட்-இணைந்த பகுதிகளில் மிகுதி மின்சாரத்தை விற்கவும் அனுமதிக்கும்.",
+  "eligibilitySummaryEn": "Broadly for individual farmers, farmer groups/cooperatives, and panchayats, subject to land and connection requirements for the specific component (standalone pump vs. grid-connected plant). Subsidy share and exact conditions vary by state and component — check the official portal.",
+  "eligibilitySummaryTa": "பொதுவாக தனிநபர் விவசாயிகள், விவசாயி குழுக்கள்/கூட்டுறவு சங்கங்கள், பஞ்சாயத்துகளுக்கு பொருந்தும், குறிப்பிட்ட பிரிவுக்கு (தனி பம்பு அல்லது கிரிட்-இணைந்த நிலையம்) ஏற்ற நிலம்/இணைப்பு தேவைகளுக்கு உட்பட்டது. மானிய பங்கு மற்றும் விதிமுறைகள் மாநிலத்திற்கும் பிரிவுக்கும் மாறுபடும் — அதிகாரபூர்வ போர்டலில் சரிபார்க்கவும்.",
+  "howToApplyEn": "Apply through your state's nodal agency/distribution company (DISCOM) or renewable energy department, as linked from the official PM-KUSUM portal.",
+  "howToApplyTa": "உங்கள் மாநிலத்தின் நோடல் முகமை/விநியோக நிறுவனம் (DISCOM) அல்லது புதுப்பிக்கத்தக்க ஆற்றல் துறை வழியாக, அதிகாரபூர்வ PM-KUSUM போர்டலில் இருந்து இணைக்கப்பட்ட வழியில் விண்ணப்பிக்கவும்.",
+  "officialUrl": "https://pmkusum.mnre.gov.in/",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}

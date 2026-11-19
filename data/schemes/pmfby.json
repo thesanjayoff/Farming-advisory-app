@@ -1,0 +1,14 @@
+{
+  "id": "pmfby",
+  "nameEn": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+  "nameTa": "பிஎம்எப்பிவை (பிரதான் மந்திரி பசல் பீமா யோஜனா)",
+  "summaryEn": "A central government crop insurance scheme that protects farmers against crop loss or damage caused by natural calamities, pests, or disease, by paying out a claim when notified losses occur.",
+  "summaryTa": "இயற்கை பேரிடர்கள், பூச்சி அல்லது நோய் தாக்குதலால் பயிர் சேதம் ஏற்படும்போது விவசாயிகளுக்கு நட்ட ஈட்டு தொகை வழங்கும் மத்திய அரசு பயிர் காப்பீட்டு திட்டம்.",
+  "eligibilitySummaryEn": "Broadly for farmers growing notified crops in notified areas, including both loanee and non-loanee farmers. Exact notified crops, areas, and premium rates vary by season and state — check the official portal.",
+  "eligibilitySummaryTa": "அறிவிக்கப்பட்ட பகுதிகளில் அறிவிக்கப்பட்ட பயிர்களை பயிரிடும் விவசாயிகளுக்கு பொதுவாக பொருந்தும், கடன் பெற்றோர் மற்றும் பெறாதோர் இருவருக்கும். பயிர், பகுதி, பிரீமியம் விகிதம் பருவத்திற்கும் மாநிலத்திற்கும் மாறுபடும் — அதிகாரபூர்வ போர்டலில் சரிபார்க்கவும்.",
+  "howToApplyEn": "Apply through the official PMFBY portal, your bank (if you have a crop loan), a Common Service Centre, or an authorised insurance company, before the notified cut-off date for your crop and season.",
+  "howToApplyTa": "அதிகாரபூர்வ PMFBY போர்டல், உங்கள் வங்கி (பயிர் கடன் இருந்தால்), பொது சேவை மையம், அல்லது அங்கீகரிக்கப்பட்ட காப்பீட்டு நிறுவனம் வழியாக, உங்கள் பயிர் மற்றும் பருவத்திற்கான கடைசி தேதிக்கு முன் விண்ணப்பிக்கவும்.",
+  "officialUrl": "https://pmfby.gov.in/",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}

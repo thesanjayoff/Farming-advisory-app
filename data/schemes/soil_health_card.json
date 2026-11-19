@@ -1,0 +1,14 @@
+{
+  "id": "soil_health_card",
+  "nameEn": "Soil Health Card Scheme",
+  "nameTa": "மண் வள அட்டை திட்டம்",
+  "summaryEn": "A government scheme that tests a farmer's soil and issues a periodic report card showing its nutrient status (pH, organic carbon, major and micro nutrients), so the farmer and local officers can plan soil management together.",
+  "summaryTa": "விவசாயியின் மண்ணை பரிசோதித்து, அதன் ஊட்டச்சத்து நிலையை (pH, இயற்கை கார்பன், முதன்மை மற்றும் நுண் ஊட்டச்சத்துக்கள்) காட்டும் அறிக்கையை காலமுறையில் வழங்கும் அரசு திட்டம். இதன் மூலம் விவசாயியும் உள்ளூர் அதிகாரிகளும் சேர்ந்து மண் மேலாண்மையை திட்டமிடலாம்.",
+  "eligibilitySummaryEn": "Broadly open to all farmers with cultivable land; cards are issued cycle-wise by the local agriculture department. Exact testing cycles and coverage vary by district — check the official portal or your local Agriculture Officer.",
+  "eligibilitySummaryTa": "பயிரிடத்தக்க நிலம் உள்ள அனைத்து விவசாயிகளுக்கும் பொதுவாக பொருந்தும்; அட்டைகள் உள்ளூர் வேளாண் துறையால் சுழற்சி முறையில் வழங்கப்படுகின்றன. பரிசோதனை சுழற்சி மற்றும் உள்ளடக்கம் மாவட்டத்திற்கு மாறுபடும் — அதிகாரபூர்வ போர்டல் அல்லது உங்கள் உள்ளூர் வேளாண் அதிகாரியிடம் சரிபார்க்கவும்.",
+  "howToApplyEn": "Soil samples are usually collected by the local agriculture department on a scheduled cycle; a farmer can also request sampling through their local Agriculture Officer or Krishi Vigyan Kendra. Check the official portal for how to view or download your card online.",
+  "howToApplyTa": "மண் மாதிரிகள் பொதுவாக உள்ளூர் வேளாண் துறையால் திட்டமிடப்பட்ட சுழற்சியில் சேகரிக்கப்படும்; விவசாயி தனது உள்ளூர் வேளாண் அதிகாரி அல்லது கிருஷி விஞ்ஞான கேந்திரம் வழியாகவும் மாதிரி கோரலாம். உங்கள் அட்டையை ஆன்லைனில் பார்க்க/பதிவிறக்க அதிகாரபூர்வ போர்டலை பார்க்கவும்.",
+  "officialUrl": "https://soilhealth.dac.gov.in/",
+  "lastVerified": "2026-11-19",
+  "sourceNote": "Summary drafted from general public knowledge of this well-known scheme; verify current rules on the official portal before advising a farmer."
+}
