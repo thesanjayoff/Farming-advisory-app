@@ -1,0 +1,25 @@
+{
+  "cropId": "brinjal",
+  "nameEn": "Brinjal (Eggplant)",
+  "nameTa": "கத்தரிக்காய்",
+  "totalDurationDays": 140,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Brinjal (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "nursery", "nameEn": "Nursery", "nameTa": "நாற்றங்கால்", "startDay": 0, "endDay": 25, "coldStressMinC": 15, "floodSensitive": false, "sprayRelevant": false },
+    { "id": "vegetative", "nameEn": "Vegetative Growth", "nameTa": "தழை வளர்ச்சி நிலை", "startDay": 26, "endDay": 45, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "flowering", "nameEn": "Flowering", "nameTa": "பூக்கும் நிலை", "startDay": 46, "endDay": 60, "heatStressMaxC": 36, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "fruiting_first_harvest", "nameEn": "Fruiting / First Harvest", "nameTa": "காய்க்கும் / முதல் அறுவடை நிலை", "startDay": 61, "endDay": 90, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "extended_harvest", "nameEn": "Extended Harvest", "nameTa": "தொடர் அறுவடை நிலை", "startDay": 91, "endDay": 140, "floodSensitive": false, "sprayRelevant": true, "notes": "Brinjal is picked repeatedly over months; keep checking for fruit and shoot borer throughout this stage." }
+  ],
+  "tasks": [
+    { "id": "brinjal_t1", "stageId": "nursery", "dayFromSowing": 0, "nameEn": "Sow seed in nursery bed", "nameTa": "நாற்றங்காலில் விதை விதைக்கவும்", "category": "general" },
+    { "id": "brinjal_t2", "stageId": "vegetative", "dayFromSowing": 26, "nameEn": "Transplant seedlings to main field", "nameTa": "நாற்றுகளை பிரதான நிலத்தில் நடவும்", "category": "general" },
+    { "id": "brinjal_t3", "stageId": "vegetative", "dayFromSowing": 35, "nameEn": "Basal nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "அடி உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "brinjal_t4", "stageId": "flowering", "dayFromSowing": 50, "nameEn": "Check for fruit and shoot borer entry; consult KVK before any spray", "nameTa": "காய் மற்றும் தளிர் துளைப்பான் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "brinjal_t5", "stageId": "fruiting_first_harvest", "dayFromSowing": 70, "nameEn": "Remove and destroy borer-damaged shoots/fruits", "nameTa": "புழு தாக்கிய தளிர்/காய்களை அகற்றி அழிக்கவும்", "category": "pest" },
+    { "id": "brinjal_t6", "stageId": "fruiting_first_harvest", "dayFromSowing": 85, "nameEn": "Begin regular harvest picking", "nameTa": "தொடர் அறுவடை தொடங்கவும்", "category": "harvest" },
+    { "id": "brinjal_t7", "stageId": "extended_harvest", "dayFromSowing": 100, "nameEn": "Nutrient top-up every few weeks (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "சில வாரங்களுக்கு ஒருமுறை உரம் இடவும் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" }
+  ]
+}

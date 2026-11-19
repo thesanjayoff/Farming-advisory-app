@@ -1,0 +1,26 @@
+{
+  "cropId": "groundnut",
+  "nameEn": "Groundnut",
+  "nameTa": "நிலக்கடலை",
+  "totalDurationDays": 105,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Groundnut (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "germination", "nameEn": "Germination / Seedling", "nameTa": "முளைத்தல் / நாற்று நிலை", "startDay": 0, "endDay": 15, "coldStressMinC": 15, "floodSensitive": true, "sprayRelevant": false },
+    { "id": "vegetative", "nameEn": "Vegetative Branching", "nameTa": "தழை வளர்ச்சி நிலை", "startDay": 16, "endDay": 35, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "flowering_pegging", "nameEn": "Flowering & Pegging", "nameTa": "பூக்கும் & ஊசி இறங்கும் நிலை", "startDay": 36, "endDay": 60, "heatStressMaxC": 36, "floodSensitive": true, "sprayRelevant": true, "notes": "Pegs (pods) enter the soil now; waterlogging or soil crusting at this stage harms pod set." },
+    { "id": "pod_development", "nameEn": "Pod Development", "nameTa": "காய் வளர்ச்சி நிலை", "startDay": 61, "endDay": 90, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "maturity_harvest", "nameEn": "Maturity / Harvest", "nameTa": "முதிர்ச்சி / அறுவடை", "startDay": 91, "endDay": 105, "floodSensitive": false, "sprayRelevant": false }
+  ],
+  "tasks": [
+    { "id": "groundnut_t1", "stageId": "germination", "dayFromSowing": 0, "nameEn": "Sow seed in well-drained soil", "nameTa": "நல்ல வடிகால் உள்ள நிலத்தில் விதை விதைக்கவும்", "category": "general" },
+    { "id": "groundnut_t2", "stageId": "germination", "dayFromSowing": 10, "nameEn": "Check germination gaps and gap-fill", "nameTa": "முளைக்காத இடங்களை பரிசோதித்து மீண்டும் விதைக்கவும்", "category": "general" },
+    { "id": "groundnut_t3", "stageId": "vegetative", "dayFromSowing": 20, "nameEn": "First weeding", "nameTa": "முதல் களை எடுத்தல்", "category": "weeding" },
+    { "id": "groundnut_t4", "stageId": "vegetative", "dayFromSowing": 30, "nameEn": "Basal nutrient top-up window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "அடி உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "groundnut_t5", "stageId": "flowering_pegging", "dayFromSowing": 40, "nameEn": "Light irrigation to help peg penetration; avoid waterlogging", "nameTa": "ஊசி இறங்க இலேசான நீர்ப்பாசனம்; தண்ணீர் தேக்கத்தை தவிர்க்கவும்", "category": "irrigation" },
+    { "id": "groundnut_t6", "stageId": "pod_development", "dayFromSowing": 65, "nameEn": "Check for leaf spot / rust; consult KVK before any spray", "nameTa": "இலை புள்ளி நோய் / சிவப்பு காரீயம் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "groundnut_t7", "stageId": "maturity_harvest", "dayFromSowing": 95, "nameEn": "Stop irrigation ahead of harvest", "nameTa": "அறுவடைக்கு முன் நீர்ப்பாசனத்தை நிறுத்தவும்", "category": "irrigation" },
+    { "id": "groundnut_t8", "stageId": "maturity_harvest", "dayFromSowing": 102, "nameEn": "Harvest and sun-dry pods", "nameTa": "அறுவடை செய்து காய்களை வெயிலில் உலர்த்தவும்", "category": "harvest" }
+  ]
+}

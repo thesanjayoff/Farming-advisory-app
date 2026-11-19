@@ -1,0 +1,26 @@
+{
+  "cropId": "banana",
+  "nameEn": "Banana",
+  "nameTa": "வாழை",
+  "totalDurationDays": 300,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Banana (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "establishment", "nameEn": "Establishment", "nameTa": "நிலைப்படுத்தும் நிலை", "startDay": 0, "endDay": 60, "coldStressMinC": 15, "floodSensitive": true, "sprayRelevant": false },
+    { "id": "vegetative", "nameEn": "Vegetative Growth", "nameTa": "தழை வளர்ச்சி நிலை", "startDay": 61, "endDay": 150, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "flowering_bunch", "nameEn": "Flowering / Bunch Emergence", "nameTa": "பூக்குலை தோன்றும் நிலை", "startDay": 151, "endDay": 210, "floodSensitive": false, "sprayRelevant": true, "notes": "Emerging bunches and tall pseudostems are highly vulnerable to strong wind; stake or prop plants when a wind alert is shown." },
+    { "id": "fruit_development", "nameEn": "Fruit Development", "nameTa": "காய் வளர்ச்சி நிலை", "startDay": 211, "endDay": 280, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 281, "endDay": 300, "floodSensitive": false, "sprayRelevant": false }
+  ],
+  "tasks": [
+    { "id": "banana_t1", "stageId": "establishment", "dayFromSowing": 0, "nameEn": "Plant healthy suckers / tissue-culture plants", "nameTa": "ஆரோக்கியமான கன்று / திசு வளர்ப்பு நாற்றுகளை நடவும்", "category": "general" },
+    { "id": "banana_t2", "stageId": "establishment", "dayFromSowing": 30, "nameEn": "Ensure drainage around base; avoid waterlogging", "nameTa": "அடிப்பகுதியில் வடிகால் உள்ளதா எனப் பார்க்கவும்; தண்ணீர் தேக்கத்தை தவிர்க்கவும்", "category": "irrigation" },
+    { "id": "banana_t3", "stageId": "vegetative", "dayFromSowing": 90, "nameEn": "Top-dress nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "banana_t4", "stageId": "vegetative", "dayFromSowing": 120, "nameEn": "Remove excess suckers", "nameTa": "அதிகப்படியான கன்றுகளை அகற்றவும்", "category": "general" },
+    { "id": "banana_t5", "stageId": "flowering_bunch", "dayFromSowing": 160, "nameEn": "Prop / stake plants with emerging bunches before windy weather", "nameTa": "காற்று வருமுன் பூக்குலை உள்ள தாவரங்களுக்கு தூண் கொடுக்கவும்", "category": "general" },
+    { "id": "banana_t6", "stageId": "fruit_development", "dayFromSowing": 220, "nameEn": "Check for sigatoka leaf spot / bunch pests; consult KVK before any spray", "nameTa": "இலை புள்ளி நோய் / குலை பூச்சி பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "banana_t7", "stageId": "fruit_development", "dayFromSowing": 240, "nameEn": "Bunch cover / support as fruit fills", "nameTa": "காய் நிரம்பும்போது குலையை தாங்கவும் / மூடவும்", "category": "general" },
+    { "id": "banana_t8", "stageId": "harvest", "dayFromSowing": 290, "nameEn": "Harvest bunch at correct maturity", "nameTa": "சரியான முதிர்ச்சியில் குலையை அறுவடை செய்யவும்", "category": "harvest" }
+  ]
+}

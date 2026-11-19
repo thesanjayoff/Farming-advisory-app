@@ -1,0 +1,25 @@
+{
+  "cropId": "tomato",
+  "nameEn": "Tomato",
+  "nameTa": "தக்காளி",
+  "totalDurationDays": 105,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Tomato (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "nursery", "nameEn": "Nursery", "nameTa": "நாற்றங்கால்", "startDay": 0, "endDay": 20, "coldStressMinC": 15, "floodSensitive": false, "sprayRelevant": false },
+    { "id": "vegetative", "nameEn": "Vegetative Growth", "nameTa": "தழை வளர்ச்சி நிலை", "startDay": 21, "endDay": 40, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "flowering", "nameEn": "Flowering", "nameTa": "பூக்கும் நிலை", "startDay": 41, "endDay": 60, "heatStressMaxC": 35, "floodSensitive": true, "sprayRelevant": true, "notes": "High temperature at flowering causes flower drop; avoid stress irrigation gaps now." },
+    { "id": "fruit_set_development", "nameEn": "Fruit Set / Development", "nameTa": "காய் பிடிக்கும் / வளர்ச்சி நிலை", "startDay": 61, "endDay": 90, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 91, "endDay": 105, "floodSensitive": false, "sprayRelevant": false }
+  ],
+  "tasks": [
+    { "id": "tomato_t1", "stageId": "nursery", "dayFromSowing": 0, "nameEn": "Sow seed in nursery bed / trays", "nameTa": "நாற்றங்காலில் விதை விதைக்கவும்", "category": "general" },
+    { "id": "tomato_t2", "stageId": "vegetative", "dayFromSowing": 21, "nameEn": "Transplant seedlings to main field", "nameTa": "நாற்றுகளை பிரதான நிலத்தில் நடவும்", "category": "general" },
+    { "id": "tomato_t3", "stageId": "vegetative", "dayFromSowing": 30, "nameEn": "Basal nutrient and staking window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "அடி உரம் & தூண் கொடுக்கும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "tomato_t4", "stageId": "flowering", "dayFromSowing": 45, "nameEn": "Keep soil moisture even; avoid long dry gaps", "nameTa": "மண் ஈரப்பதத்தை சீராக வைக்கவும்; நீண்ட வறட்சி இடைவெளியை தவிர்க்கவும்", "category": "irrigation" },
+    { "id": "tomato_t5", "stageId": "fruit_set_development", "dayFromSowing": 65, "nameEn": "Check for fruit borer / blight; consult KVK before any spray", "nameTa": "காய் துளைப்பான் / இலை கருகல் நோய் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "tomato_t6", "stageId": "fruit_set_development", "dayFromSowing": 80, "nameEn": "Second nutrient top-up window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "இரண்டாம் உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "tomato_t7", "stageId": "harvest", "dayFromSowing": 92, "nameEn": "Begin harvest picking at breaker stage", "nameTa": "நிறம் மாறும் நிலையில் அறுவடை தொடங்கவும்", "category": "harvest" }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "cropId": "chilli",
+  "nameEn": "Chilli",
+  "nameTa": "மிளகாய்",
+  "totalDurationDays": 160,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Chilli (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "nursery", "nameEn": "Nursery", "nameTa": "நாற்றங்கால்", "startDay": 0, "endDay": 30, "coldStressMinC": 15, "floodSensitive": false, "sprayRelevant": false },
+    { "id": "vegetative", "nameEn": "Vegetative Growth", "nameTa": "தழை வளர்ச்சி நிலை", "startDay": 31, "endDay": 55, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "flowering", "nameEn": "Flowering", "nameTa": "பூக்கும் நிலை", "startDay": 56, "endDay": 75, "heatStressMaxC": 36, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "fruit_development_first_picking", "nameEn": "Fruit Development / First Picking", "nameTa": "காய் வளர்ச்சி / முதல் அறுவடை நிலை", "startDay": 76, "endDay": 110, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "extended_picking", "nameEn": "Extended Picking", "nameTa": "தொடர் அறுவடை நிலை", "startDay": 111, "endDay": 160, "floodSensitive": false, "sprayRelevant": true, "notes": "Chilli is picked over several months; continue checking for thrips/mites throughout this stage." }
+  ],
+  "tasks": [
+    { "id": "chilli_t1", "stageId": "nursery", "dayFromSowing": 0, "nameEn": "Sow seed in nursery bed", "nameTa": "நாற்றங்காலில் விதை விதைக்கவும்", "category": "general" },
+    { "id": "chilli_t2", "stageId": "vegetative", "dayFromSowing": 31, "nameEn": "Transplant seedlings to main field", "nameTa": "நாற்றுகளை பிரதான நிலத்தில் நடவும்", "category": "general" },
+    { "id": "chilli_t3", "stageId": "vegetative", "dayFromSowing": 40, "nameEn": "Basal nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "அடி உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "chilli_t4", "stageId": "flowering", "dayFromSowing": 60, "nameEn": "Check for thrips / mites (leaf curl symptoms); consult KVK before any spray", "nameTa": "நுண் பூச்சி / இலை சுருள் அறிகுறி பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "chilli_t5", "stageId": "fruit_development_first_picking", "dayFromSowing": 90, "nameEn": "Begin first harvest picking of ripe pods", "nameTa": "முதிர்ந்த காய்களின் முதல் அறுவடை தொடங்கவும்", "category": "harvest" },
+    { "id": "chilli_t6", "stageId": "fruit_development_first_picking", "dayFromSowing": 100, "nameEn": "Nutrient top-up window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "chilli_t7", "stageId": "extended_picking", "dayFromSowing": 130, "nameEn": "Continue picking every 10-15 days", "nameTa": "10-15 நாட்களுக்கு ஒருமுறை அறுவடை தொடரவும்", "category": "harvest" }
+  ]
+}

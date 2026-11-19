@@ -1,0 +1,26 @@
+{
+  "cropId": "paddy",
+  "nameEn": "Paddy (Rice)",
+  "nameTa": "நெல்",
+  "totalDurationDays": 120,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Paddy (general short-duration transplanted paddy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "nursery", "nameEn": "Nursery", "nameTa": "நாற்றங்கால்", "startDay": 0, "endDay": 20, "coldStressMinC": 15, "floodSensitive": false, "sprayRelevant": false },
+    { "id": "transplant_tillering", "nameEn": "Transplanting & Tillering", "nameTa": "நடவு & தவாரணை", "startDay": 21, "endDay": 45, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "panicle_initiation", "nameEn": "Panicle Initiation", "nameTa": "கூளை தோன்றும் நிலை", "startDay": 46, "endDay": 65, "floodSensitive": true, "sprayRelevant": true },
+    { "id": "flowering", "nameEn": "Flowering / Heading", "nameTa": "பூக்கும் நிலை", "startDay": 66, "endDay": 85, "heatStressMaxC": 35, "coldStressMinC": 18, "floodSensitive": false, "sprayRelevant": true, "notes": "Spraying during flowering can harm pollination; avoid unless specifically advised." },
+    { "id": "grain_filling", "nameEn": "Grain Filling / Maturity", "nameTa": "தானிய வளர்ச்சி", "startDay": 86, "endDay": 110, "heatStressMaxC": 38, "floodSensitive": true, "sprayRelevant": false },
+    { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 111, "endDay": 120, "floodSensitive": false, "sprayRelevant": false }
+  ],
+  "tasks": [
+    { "id": "paddy_t1", "stageId": "nursery", "dayFromSowing": 0, "nameEn": "Sow nursery bed", "nameTa": "நாற்றங்கால் விதைப்பு", "category": "general" },
+    { "id": "paddy_t2", "stageId": "transplant_tillering", "dayFromSowing": 21, "nameEn": "Transplant seedlings", "nameTa": "நாற்று நடவு", "category": "general" },
+    { "id": "paddy_t3", "stageId": "transplant_tillering", "dayFromSowing": 30, "nameEn": "First top-dress nutrient application window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "முதல் உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "paddy_t4", "stageId": "panicle_initiation", "dayFromSowing": 46, "nameEn": "Check for stem borer / leaf folder; consult KVK before any spray", "nameTa": "தண்டு துளைப்பான் / இலை சுருட்டுப்புழு பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "paddy_t5", "stageId": "flowering", "dayFromSowing": 70, "nameEn": "Avoid disturbance/spraying during flowering", "nameTa": "பூக்கும் காலத்தில் தெளித்தல் தவிர்க்கவும்", "category": "general" },
+    { "id": "paddy_t6", "stageId": "grain_filling", "dayFromSowing": 95, "nameEn": "Drain field gradually ahead of harvest", "nameTa": "அறுவடைக்கு முன் வயலில் நீரை வெளியேற்றவும்", "category": "irrigation" },
+    { "id": "paddy_t7", "stageId": "harvest", "dayFromSowing": 115, "nameEn": "Harvest and dry grain", "nameTa": "அறுவடை & தானியம் உலர்த்துதல்", "category": "harvest" }
+  ]
+}

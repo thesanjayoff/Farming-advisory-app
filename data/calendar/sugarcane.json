@@ -1,0 +1,26 @@
+{
+  "cropId": "sugarcane",
+  "nameEn": "Sugarcane",
+  "nameTa": "கரும்பு",
+  "totalDurationDays": 330,
+  "source": "TNAU Agritech Portal — Crop Production Guide, Sugarcane (general agronomy practice)",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "expertVerified": false,
+  "stages": [
+    { "id": "germination", "nameEn": "Germination", "nameTa": "முளைத்தல் நிலை", "startDay": 0, "endDay": 35, "coldStressMinC": 15, "floodSensitive": true, "sprayRelevant": false },
+    { "id": "tillering", "nameEn": "Tillering", "nameTa": "தோன்றல் உருவாகும் நிலை", "startDay": 36, "endDay": 100, "floodSensitive": false, "sprayRelevant": true },
+    { "id": "grand_growth", "nameEn": "Grand Growth", "nameTa": "முதன்மை வளர்ச்சி நிலை", "startDay": 101, "endDay": 240, "floodSensitive": false, "sprayRelevant": true, "notes": "Highest water demand period, but standing water for long periods still damages roots — ensure drainage even while irrigating frequently." },
+    { "id": "maturity_ripening", "nameEn": "Maturity / Ripening", "nameTa": "முதிர்ச்சி / கனி நிலை", "startDay": 241, "endDay": 310, "floodSensitive": true, "sprayRelevant": false, "notes": "Reduced irrigation now helps sugar accumulation." },
+    { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 311, "endDay": 330, "floodSensitive": false, "sprayRelevant": false }
+  ],
+  "tasks": [
+    { "id": "sugarcane_t1", "stageId": "germination", "dayFromSowing": 0, "nameEn": "Plant setts in furrows", "nameTa": "கரும்பு துண்டுகளை வரிசையில் நடவும்", "category": "general" },
+    { "id": "sugarcane_t2", "stageId": "germination", "dayFromSowing": 30, "nameEn": "Gap-fill where setts failed to sprout", "nameTa": "முளைக்காத இடங்களில் மீண்டும் நடவு செய்யவும்", "category": "general" },
+    { "id": "sugarcane_t3", "stageId": "tillering", "dayFromSowing": 45, "nameEn": "First weeding and earthing-up", "nameTa": "முதல் களை எடுத்தல் & மண் அணைத்தல்", "category": "weeding" },
+    { "id": "sugarcane_t4", "stageId": "tillering", "dayFromSowing": 60, "nameEn": "Top-dress nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+    { "id": "sugarcane_t5", "stageId": "grand_growth", "dayFromSowing": 130, "nameEn": "Check irrigation schedule matches rainfall; avoid prolonged waterlogging", "nameTa": "மழைக்கு ஏற்ப நீர்ப்பாசன அட்டவணையை சரிபார்க்கவும்; நீண்ட நேர தண்ணீர் தேக்கத்தை தவிர்க்கவும்", "category": "irrigation" },
+    { "id": "sugarcane_t6", "stageId": "grand_growth", "dayFromSowing": 180, "nameEn": "Check for shoot borer / top borer; consult KVK before any spray", "nameTa": "தண்டு துளைப்பான் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+    { "id": "sugarcane_t7", "stageId": "maturity_ripening", "dayFromSowing": 260, "nameEn": "Reduce irrigation frequency", "nameTa": "நீர்ப்பாசன அதிர்வெண்ணை குறைக்கவும்", "category": "irrigation" },
+    { "id": "sugarcane_t8", "stageId": "harvest", "dayFromSowing": 320, "nameEn": "Harvest cane", "nameTa": "கரும்பு அறுவடை", "category": "harvest" }
+  ]
+}

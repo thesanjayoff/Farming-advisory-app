@@ -1,0 +1,50 @@
+[
+  {
+    "cropId": "millet_ragi",
+    "nameEn": "Finger Millet (Ragi)",
+    "nameTa": "கேழ்வரகு",
+    "totalDurationDays": 105,
+    "source": "TNAU Agritech Portal — Crop Production Guide, Ragi / Finger Millet (general agronomy practice)",
+    "sourceUrl": "https://agritech.tnau.ac.in/",
+    "expertVerified": false,
+    "stages": [
+      { "id": "seedling", "nameEn": "Seedling", "nameTa": "நாற்று நிலை", "startDay": 0, "endDay": 20, "coldStressMinC": 13, "floodSensitive": true, "sprayRelevant": false },
+      { "id": "vegetative", "nameEn": "Vegetative / Tillering", "nameTa": "தழை / தோன்றல் வளர்ச்சி நிலை", "startDay": 21, "endDay": 50, "floodSensitive": false, "sprayRelevant": true },
+      { "id": "flowering", "nameEn": "Flowering / Ear Emergence", "nameTa": "பூக்கும் / கதிர் தோன்றும் நிலை", "startDay": 51, "endDay": 75, "floodSensitive": false, "sprayRelevant": true },
+      { "id": "grain_filling", "nameEn": "Grain Filling", "nameTa": "தானிய வளர்ச்சி நிலை", "startDay": 76, "endDay": 95, "floodSensitive": true, "sprayRelevant": false },
+      { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 96, "endDay": 105, "floodSensitive": false, "sprayRelevant": false }
+    ],
+    "tasks": [
+      { "id": "ragi_t1", "stageId": "seedling", "dayFromSowing": 0, "nameEn": "Sow seed (direct or nursery-raised)", "nameTa": "விதையை நேரடியாக அல்லது நாற்றங்காலில் விதைக்கவும்", "category": "general" },
+      { "id": "ragi_t2", "stageId": "vegetative", "dayFromSowing": 25, "nameEn": "First weeding", "nameTa": "முதல் களை எடுத்தல்", "category": "weeding" },
+      { "id": "ragi_t3", "stageId": "vegetative", "dayFromSowing": 35, "nameEn": "Top-dress nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+      { "id": "ragi_t4", "stageId": "flowering", "dayFromSowing": 55, "nameEn": "Check for ear head bug / blast disease; consult KVK before any spray", "nameTa": "கதிர் பூச்சி / கருகல் நோய் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+      { "id": "ragi_t5", "stageId": "grain_filling", "dayFromSowing": 85, "nameEn": "Reduce irrigation ahead of harvest", "nameTa": "அறுவடைக்கு முன் நீர்ப்பாசனத்தை குறைக்கவும்", "category": "irrigation" },
+      { "id": "ragi_t6", "stageId": "harvest", "dayFromSowing": 100, "nameEn": "Harvest and thresh grain", "nameTa": "அறுவடை செய்து தானியம் பிரித்தல்", "category": "harvest" }
+    ]
+  },
+  {
+    "cropId": "millet_bajra",
+    "nameEn": "Pearl Millet (Bajra / Cumbu)",
+    "nameTa": "கம்பு",
+    "totalDurationDays": 80,
+    "source": "TNAU Agritech Portal — Crop Production Guide, Bajra / Pearl Millet (general agronomy practice)",
+    "sourceUrl": "https://agritech.tnau.ac.in/",
+    "expertVerified": false,
+    "stages": [
+      { "id": "seedling", "nameEn": "Seedling", "nameTa": "நாற்று நிலை", "startDay": 0, "endDay": 15, "coldStressMinC": 13, "floodSensitive": true, "sprayRelevant": false },
+      { "id": "vegetative", "nameEn": "Vegetative / Tillering", "nameTa": "தழை / தோன்றல் வளர்ச்சி நிலை", "startDay": 16, "endDay": 35, "floodSensitive": false, "sprayRelevant": true },
+      { "id": "flowering", "nameEn": "Flowering / Ear Emergence", "nameTa": "பூக்கும் / கதிர் தோன்றும் நிலை", "startDay": 36, "endDay": 55, "heatStressMaxC": 40, "floodSensitive": false, "sprayRelevant": true, "notes": "Bajra tolerates heat well but prolonged waterlogging at any stage is harmful." },
+      { "id": "grain_filling", "nameEn": "Grain Filling", "nameTa": "தானிய வளர்ச்சி நிலை", "startDay": 56, "endDay": 72, "floodSensitive": true, "sprayRelevant": false },
+      { "id": "harvest", "nameEn": "Harvest", "nameTa": "அறுவடை", "startDay": 73, "endDay": 80, "floodSensitive": false, "sprayRelevant": false }
+    ],
+    "tasks": [
+      { "id": "bajra_t1", "stageId": "seedling", "dayFromSowing": 0, "nameEn": "Sow seed directly in field", "nameTa": "விதையை நேரடியாக நிலத்தில் விதைக்கவும்", "category": "general" },
+      { "id": "bajra_t2", "stageId": "vegetative", "dayFromSowing": 18, "nameEn": "Thin seedlings and first weeding", "nameTa": "நாற்றுகளை அடர்த்தி குறைத்து முதல் களை எடுத்தல்", "category": "weeding" },
+      { "id": "bajra_t3", "stageId": "vegetative", "dayFromSowing": 25, "nameEn": "Top-dress nutrient window (confirm quantity with your Agriculture Officer / KVK)", "nameTa": "உரம் இடும் காலம் (அளவை உங்கள் வேளாண் அதிகாரி / KVK-வுடன் உறுதி செய்யவும்)", "category": "nutrient" },
+      { "id": "bajra_t4", "stageId": "flowering", "dayFromSowing": 40, "nameEn": "Check for ear head caterpillar / downy mildew; consult KVK before any spray", "nameTa": "கதிர் புழு / பஞ்சு நோய் பரிசோதனை; தெளிக்கும் முன் KVK ஆலோசனை பெறவும்", "category": "pest" },
+      { "id": "bajra_t5", "stageId": "grain_filling", "dayFromSowing": 65, "nameEn": "Reduce irrigation ahead of harvest", "nameTa": "அறுவடைக்கு முன் நீர்ப்பாசனத்தை குறைக்கவும்", "category": "irrigation" },
+      { "id": "bajra_t6", "stageId": "harvest", "dayFromSowing": 76, "nameEn": "Harvest and thresh grain", "nameTa": "அறுவடை செய்து தானியம் பிரித்தல்", "category": "harvest" }
+    ]
+  }
+]
