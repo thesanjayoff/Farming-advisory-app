@@ -2,7 +2,19 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { MapPin } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useI18n } from "@/lib/i18n/context";
 import { useFarmProfile, newPlot } from "@/lib/hooks/useFarmProfile";
 import { supportedLanguages } from "@/lib/i18n/dictionary";
@@ -81,70 +93,71 @@ export default function OnboardingPage() {
     <PageShell title={t("onboarding_welcome")} showBack>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 pb-8">
         <div>
-          <label className="mb-1 block text-sm font-medium">{t("onboarding_choose_language")}</label>
+          <Label className="mb-1">{t("onboarding_choose_language")}</Label>
           <div className="flex gap-2">
             {supportedLanguages.map((l) => (
-              <button
+              <Button
                 type="button"
                 key={l.code}
+                variant={lang === l.code ? "default" : "outline"}
+                className={lang === l.code ? "bg-brand text-white hover:bg-brand/90" : ""}
                 onClick={() => setLang(l.code)}
-                className={`tap-target rounded-lg border px-4 text-sm font-medium ${
-                  lang === l.code ? "border-brand bg-brand-light" : "border-neutral-300"
-                }`}
               >
                 {l.label}
-              </button>
+              </Button>
             ))}
           </div>
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="farmerName">
+          <Label className="mb-1" htmlFor="farmerName">
             {t("onboarding_farmer_name")}
-          </label>
-          <input
+          </Label>
+          <Input
             id="farmerName"
             value={farmerName}
             onChange={(e) => setFarmerName(e.target.value)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
+            className="tap-target w-full"
           />
         </div>
 
-        <hr className="border-neutral-200" />
+        <Separator />
         <h2 className="text-base font-semibold">{t("onboarding_add_plot")}</h2>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="plotName">
+          <Label className="mb-1" htmlFor="plotName">
             {t("onboarding_plot_name")}
-          </label>
-          <input
+          </Label>
+          <Input
             id="plotName"
             value={plotName}
             onChange={(e) => setPlotName(e.target.value)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
+            className="tap-target w-full"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="location">
+          <Label className="mb-1" htmlFor="location">
             {t("onboarding_location")}
-          </label>
-          <input
+          </Label>
+          <Input
             id="location"
             value={locationLabel}
             onChange={(e) => setLocationLabel(e.target.value)}
             placeholder={t("onboarding_search_location")}
-            className="tap-target mb-2 w-full rounded-lg border border-neutral-300 px-3"
+            className="tap-target mb-2 w-full"
           />
-          <button
+          <Button
             type="button"
+            variant="outline"
+            className="w-full border-brand text-brand hover:bg-brand-light"
             onClick={useGps}
-            className="tap-target w-full rounded-lg border border-brand px-3 text-sm font-medium text-brand"
           >
-            📍 {t("onboarding_use_gps")}
-          </button>
+            <MapPin className="size-4" aria-hidden />
+            {t("onboarding_use_gps")}
+          </Button>
           {coords && (
-            <p className="mt-1 text-xs text-neutral-500">
+            <p className="mt-1 text-xs text-muted-foreground">
               {coords.lat.toFixed(3)}, {coords.lon.toFixed(3)}
             </p>
           )}
@@ -152,94 +165,90 @@ export default function OnboardingPage() {
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="area">
+          <Label className="mb-1" htmlFor="area">
             {t("onboarding_area")}
-          </label>
-          <input
+          </Label>
+          <Input
             id="area"
             type="number"
             min="0"
             step="0.1"
             value={areaAcres}
             onChange={(e) => setAreaAcres(e.target.value)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
+            className="tap-target w-full"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="soil">
+          <Label className="mb-1" htmlFor="soil">
             {t("onboarding_soil_type")}
-          </label>
-          <select
-            id="soil"
-            value={soilType}
-            onChange={(e) => setSoilType(e.target.value as SoilType)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
-          >
-            {SOIL_TYPES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
+          </Label>
+          <Select value={soilType} onValueChange={(v) => v && setSoilType(v as SoilType)}>
+            <SelectTrigger id="soil" className="tap-target w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {SOIL_TYPES.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {s}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="irrigation">
+          <Label className="mb-1" htmlFor="irrigation">
             {t("onboarding_irrigation")}
-          </label>
-          <select
-            id="irrigation"
-            value={irrigationSource}
-            onChange={(e) => setIrrigationSource(e.target.value as IrrigationSource)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
-          >
-            {IRRIGATION_SOURCES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
+          </Label>
+          <Select value={irrigationSource} onValueChange={(v) => v && setIrrigationSource(v as IrrigationSource)}>
+            <SelectTrigger id="irrigation" className="tap-target w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {IRRIGATION_SOURCES.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {s}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="crop">
+          <Label className="mb-1" htmlFor="crop">
             {t("onboarding_crop")}
-          </label>
-          <select
-            id="crop"
-            value={cropId}
-            onChange={(e) => setCropId(e.target.value as CropId)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
-          >
-            {Object.entries(cropDisplayNames).map(([id, names]) => (
-              <option key={id} value={id}>
-                {lang === "ta" ? names.ta : names.en}
-              </option>
-            ))}
-          </select>
+          </Label>
+          <Select value={cropId} onValueChange={(v) => v && setCropId(v as CropId)}>
+            <SelectTrigger id="crop" className="tap-target w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.entries(cropDisplayNames).map(([id, names]) => (
+                <SelectItem key={id} value={id}>
+                  {lang === "ta" ? names.ta : names.en}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium" htmlFor="sowingDate">
+          <Label className="mb-1" htmlFor="sowingDate">
             {t("onboarding_sowing_date")}
-          </label>
-          <input
+          </Label>
+          <Input
             id="sowingDate"
             type="date"
             value={sowingDate}
             onChange={(e) => setSowingDate(e.target.value)}
-            className="tap-target w-full rounded-lg border border-neutral-300 px-3"
+            className="tap-target w-full"
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={submitting}
-          className="tap-target mt-2 w-full rounded-xl bg-brand text-lg font-semibold text-white disabled:opacity-60"
-        >
+        <Button type="submit" size="touch" disabled={submitting} className="mt-2 w-full">
           {t("onboarding_finish")}
-        </button>
+        </Button>
       </form>
     </PageShell>
   );

@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Separator } from "@/components/ui/separator";
 import { useI18n } from "@/lib/i18n/context";
 import { useFarmProfile } from "@/lib/hooks/useFarmProfile";
 import { getAllDiaryEntries, deleteAllData, saveFarm, saveDiaryEntry } from "@/lib/db/client";
@@ -108,138 +114,145 @@ export default function SettingsPage() {
           <h2 className="mb-2 text-sm font-semibold">{t("settings_language")}</h2>
           <div className="flex flex-wrap gap-2">
             {supportedLanguages.map((l) => (
-              <button
+              <Button
                 key={l.code}
+                variant={lang === l.code ? "default" : "outline"}
+                className={lang === l.code ? "bg-brand text-white hover:bg-brand/90" : ""}
                 onClick={() => setLang(l.code)}
-                className={`tap-target rounded-lg border px-4 text-sm ${
-                  lang === l.code ? "border-brand bg-brand-light" : "border-neutral-300"
-                }`}
               >
                 {l.label}
                 {!l.complete && " (beta)"}
-              </button>
+              </Button>
             ))}
           </div>
         </section>
 
-        <section className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white p-3">
-          <span className="text-sm font-medium">{t("settings_low_data_mode")}</span>
-          <button
-            onClick={toggleLowData}
-            className={`tap-target rounded-full px-4 text-sm ${lowData ? "bg-brand text-white" : "bg-neutral-200"}`}
-          >
-            {lowData ? "ON" : "OFF"}
-          </button>
-        </section>
+        <Card>
+          <CardContent className="flex items-center justify-between">
+            <Label htmlFor="low-data-mode" className="text-sm font-medium">
+              {t("settings_low_data_mode")}
+            </Label>
+            <Switch id="low-data-mode" checked={lowData} onCheckedChange={toggleLowData} />
+          </CardContent>
+        </Card>
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="text-sm font-medium">{t("settings_backup")}</span>
-            <button
-              onClick={toggleBackup}
-              className={`tap-target rounded-full px-4 text-sm ${
-                farm?.backupEnabled ? "bg-brand text-white" : "bg-neutral-200"
-              }`}
-            >
-              {farm?.backupEnabled ? "ON" : "OFF"}
-            </button>
-          </div>
-          {farm?.backupEnabled && (
-            <div className="flex flex-col gap-3">
-              <p className="text-xs text-neutral-500">
-                {lang === "ta"
-                  ? "குறியீடு (பாஸ்வேர்டு) வைத்து உங்கள் தரவை குறியாக்கி ஒரு கோப்பாக பதிவிறக்கலாம். இந்த கோப்பை நீங்களே பாதுகாப்பாக வைத்துக்கொள்ள வேண்டும் — அதை நாங்கள் சேமிக்க மாட்டோம்."
-                  : "Create a passphrase-encrypted backup file you download and keep yourself (e.g. in your own cloud drive) — we never store this file ourselves."}
-              </p>
-              <input
-                type="password"
-                value={backupPassphrase}
-                onChange={(e) => setBackupPassphrase(e.target.value)}
-                placeholder={lang === "ta" ? "குறியீடு (6+ எழுத்துகள்)" : "Passphrase (6+ characters)"}
-                className="tap-target rounded border border-neutral-300 px-2"
-              />
-              <button onClick={createEncryptedBackup} className="tap-target rounded-lg bg-brand text-sm font-medium text-white">
-                {lang === "ta" ? "குறியாக்கப்பட்ட காப்பு உருவாக்கு" : "Create encrypted backup"}
-              </button>
-
-              <hr className="border-neutral-200" />
-
-              <input
-                type="file"
-                accept="application/json"
-                onChange={(e) => setRestoreFile(e.target.files?.[0] ?? null)}
-                className="text-xs"
-              />
-              <input
-                type="password"
-                value={restorePassphrase}
-                onChange={(e) => setRestorePassphrase(e.target.value)}
-                placeholder={lang === "ta" ? "மீட்பு குறியீடு" : "Restore passphrase"}
-                className="tap-target rounded border border-neutral-300 px-2"
-              />
-              <button
-                onClick={restoreEncryptedBackup}
-                disabled={!restoreFile || !restorePassphrase}
-                className="tap-target rounded-lg border border-brand text-sm font-medium text-brand disabled:opacity-50"
-              >
-                {lang === "ta" ? "காப்பிலிருந்து மீட்டமை" : "Restore from backup"}
-              </button>
-              {backupStatus && <p className="text-xs text-neutral-600">{backupStatus}</p>}
+        <Card>
+          <CardContent>
+            <div className="mb-2 flex items-center justify-between">
+              <Label htmlFor="backup-toggle" className="text-sm font-medium">
+                {t("settings_backup")}
+              </Label>
+              <Switch id="backup-toggle" checked={farm?.backupEnabled ?? false} onCheckedChange={toggleBackup} />
             </div>
-          )}
-        </section>
+            {farm?.backupEnabled && (
+              <div className="flex flex-col gap-3">
+                <p className="text-xs text-muted-foreground">
+                  {lang === "ta"
+                    ? "குறியீடு (பாஸ்வேர்டு) வைத்து உங்கள் தரவை குறியாக்கி ஒரு கோப்பாக பதிவிறக்கலாம். இந்த கோப்பை நீங்களே பாதுகாப்பாக வைத்துக்கொள்ள வேண்டும் — அதை நாங்கள் சேமிக்க மாட்டோம்."
+                    : "Create a passphrase-encrypted backup file you download and keep yourself (e.g. in your own cloud drive) — we never store this file ourselves."}
+                </p>
+                <Input
+                  type="password"
+                  value={backupPassphrase}
+                  onChange={(e) => setBackupPassphrase(e.target.value)}
+                  placeholder={lang === "ta" ? "குறியீடு (6+ எழுத்துகள்)" : "Passphrase (6+ characters)"}
+                  className="tap-target"
+                />
+                <Button className="w-full" onClick={createEncryptedBackup}>
+                  {lang === "ta" ? "குறியாக்கப்பட்ட காப்பு உருவாக்கு" : "Create encrypted backup"}
+                </Button>
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="mb-1 text-sm font-semibold">
-            {lang === "ta" ? "டெலிகிராம் எச்சரிக்கைகள் (விருப்பம்)" : "Telegram alerts (optional)"}
-          </h2>
-          <p className="mb-2 text-xs text-neutral-500">
-            {lang === "ta"
-              ? "டெலிகிராமில் @VayalThunaiBot (அல்லது உங்கள் சொந்த போட்) க்கு /start அனுப்பி உங்கள் chat ID-ஐ இங்கே உள்ளிடவும்."
-              : "Message your Telegram bot /start, then paste the chat ID it gives you here. Needs TELEGRAM_BOT_TOKEN configured on the server."}
-          </p>
-          <input
-            value={telegramChatId}
-            onChange={(e) => saveTelegramChatId(e.target.value)}
-            placeholder="Telegram chat ID"
-            className="tap-target w-full rounded border border-neutral-300 px-2"
-          />
-        </section>
+                <Separator />
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3">
-          <h2 className="mb-1 text-sm font-semibold">{t("privacy_title")}</h2>
-          <p className="mb-3 text-sm text-neutral-600">{t("privacy_body")}</p>
-          <div className="flex flex-col gap-2">
-            <button onClick={exportAll} className="tap-target rounded-lg border border-brand text-sm font-medium text-brand">
-              {t("privacy_export")}
-            </button>
-            {confirmingDelete ? (
-              <div className="flex gap-2">
-                <button onClick={deleteAll} className="tap-target flex-1 rounded-lg bg-red-600 text-sm font-medium text-white">
-                  {t("common_delete")} ✓
-                </button>
-                <button onClick={() => setConfirmingDelete(false)} className="tap-target flex-1 rounded-lg border border-neutral-300 text-sm">
-                  {t("common_cancel")}
-                </button>
+                <input
+                  type="file"
+                  accept="application/json"
+                  onChange={(e) => setRestoreFile(e.target.files?.[0] ?? null)}
+                  className="text-xs"
+                />
+                <Input
+                  type="password"
+                  value={restorePassphrase}
+                  onChange={(e) => setRestorePassphrase(e.target.value)}
+                  placeholder={lang === "ta" ? "மீட்பு குறியீடு" : "Restore passphrase"}
+                  className="tap-target"
+                />
+                <Button
+                  variant="outline"
+                  className="w-full border-brand text-brand hover:bg-brand-light"
+                  disabled={!restoreFile || !restorePassphrase}
+                  onClick={restoreEncryptedBackup}
+                >
+                  {lang === "ta" ? "காப்பிலிருந்து மீட்டமை" : "Restore from backup"}
+                </Button>
+                {backupStatus && <p className="text-xs text-muted-foreground">{backupStatus}</p>}
               </div>
-            ) : (
-              <button
-                onClick={() => setConfirmingDelete(true)}
-                className="tap-target rounded-lg border border-red-400 text-sm font-medium text-red-600"
-              >
-                {t("privacy_delete")}
-              </button>
             )}
-          </div>
-        </section>
+          </CardContent>
+        </Card>
 
-        <section className="rounded-lg border border-neutral-200 bg-white p-3 text-sm text-neutral-600">
-          <h2 className="mb-1 text-sm font-semibold">{t("settings_about")}</h2>
-          <p>Weather: Open-Meteo.com (CC BY 4.0)</p>
-          <p>Prices: Agmarknet (data.gov.in), CEDA at Ashoka University</p>
-          <p>Crop calendar &amp; knowledge base: see README for source citations</p>
-          <p>Kisan Call Centre: 1800-180-1551</p>
-        </section>
+        <Card>
+          <CardContent>
+            <h2 className="mb-1 text-sm font-semibold">
+              {lang === "ta" ? "டெலிகிராம் எச்சரிக்கைகள் (விருப்பம்)" : "Telegram alerts (optional)"}
+            </h2>
+            <p className="mb-2 text-xs text-muted-foreground">
+              {lang === "ta"
+                ? "டெலிகிராமில் @VayalThunaiBot (அல்லது உங்கள் சொந்த போட்) க்கு /start அனுப்பி உங்கள் chat ID-ஐ இங்கே உள்ளிடவும்."
+                : "Message your Telegram bot /start, then paste the chat ID it gives you here. Needs TELEGRAM_BOT_TOKEN configured on the server."}
+            </p>
+            <Input
+              value={telegramChatId}
+              onChange={(e) => saveTelegramChatId(e.target.value)}
+              placeholder="Telegram chat ID"
+              className="tap-target w-full"
+            />
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent>
+            <h2 className="mb-1 text-sm font-semibold">{t("privacy_title")}</h2>
+            <p className="mb-3 text-sm text-muted-foreground">{t("privacy_body")}</p>
+            <div className="flex flex-col gap-2">
+              <Button
+                variant="outline"
+                className="border-brand text-brand hover:bg-brand-light"
+                onClick={exportAll}
+              >
+                {t("privacy_export")}
+              </Button>
+              {confirmingDelete ? (
+                <div className="flex gap-2">
+                  <Button variant="destructive" className="flex-1 bg-red-600 text-white hover:bg-red-700" onClick={deleteAll}>
+                    {t("common_delete")} ✓
+                  </Button>
+                  <Button variant="outline" className="flex-1" onClick={() => setConfirmingDelete(false)}>
+                    {t("common_cancel")}
+                  </Button>
+                </div>
+              ) : (
+                <Button
+                  variant="outline"
+                  className="border-red-400 text-red-600 hover:bg-red-50"
+                  onClick={() => setConfirmingDelete(true)}
+                >
+                  {t("privacy_delete")}
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="text-sm text-muted-foreground">
+          <CardContent>
+            <h2 className="mb-1 text-sm font-semibold text-foreground">{t("settings_about")}</h2>
+            <p>Weather: Open-Meteo.com (CC BY 4.0)</p>
+            <p>Prices: Agmarknet (data.gov.in), CEDA at Ashoka University</p>
+            <p>Crop calendar &amp; knowledge base: see README for source citations</p>
+            <p>Kisan Call Centre: 1800-180-1551</p>
+          </CardContent>
+        </Card>
       </div>
     </PageShell>
   );

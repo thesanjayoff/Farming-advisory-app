@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Send } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { VoiceButton } from "@/components/VoiceButton";
 import { SpeakButton, speak } from "@/components/SpeakButton";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { useI18n } from "@/lib/i18n/context";
 import { useFarmProfile } from "@/lib/hooks/useFarmProfile";
 import { useOnlineStatus } from "@/lib/hooks/useOnlineStatus";
@@ -134,61 +139,64 @@ export default function AssistantPage() {
     <PageShell title={t("assistant_title")} showBack>
       <div className="flex min-h-[60vh] flex-col gap-4 pb-28">
         {turns.length === 0 && (
-          <p className="text-sm text-neutral-500">{t("assistant_untrusted_notice")}</p>
+          <p className="text-sm text-muted-foreground">{t("assistant_untrusted_notice")}</p>
         )}
         {turns.map((turn) => (
           <div key={turn.id} className="flex flex-col gap-2">
             <div className="self-end rounded-xl bg-brand px-3 py-2 text-sm text-white">{turn.question}</div>
             {turn.loading ? (
-              <p className="text-sm text-neutral-500">{t("assistant_thinking")}</p>
+              <p className="text-sm text-muted-foreground">{t("assistant_thinking")}</p>
             ) : turn.answer ? (
-              <div className="flex flex-col gap-2 self-start rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm">
-                {turn.queuedOffline && <p className="text-xs font-medium text-amber-600">⏳ queued offline</p>}
-                <p className="whitespace-pre-wrap">{lang === "ta" ? turn.answer.textTa : turn.answer.textEn}</p>
-                {turn.answer.confirmWithOfficer && (
-                  <p className="font-medium text-amber-700">{t("assistant_confirm_officer")}</p>
-                )}
-                {turn.answer.kccNumber && (
-                  <p className="text-xs text-neutral-500">{t("assistant_kcc_line")}</p>
-                )}
-                {turn.answer.citations.length > 0 && (
-                  <div className="text-xs text-neutral-500">
-                    {turn.answer.citations.map((c, i) => (
-                      <p key={i}>
-                        {t("assistant_source_label")}: {c.source}
-                        {c.page ? `, ${c.page}` : ""}
-                        {!c.expertVerified && " (unverified seed data)"}
-                      </p>
-                    ))}
+              <Card className="max-w-[90%] self-start py-3">
+                <CardContent className="flex flex-col gap-2 text-sm">
+                  {turn.queuedOffline && (
+                    <Badge variant="secondary" className="w-fit text-amber-700">
+                      ⏳ queued offline
+                    </Badge>
+                  )}
+                  <p className="whitespace-pre-wrap">{lang === "ta" ? turn.answer.textTa : turn.answer.textEn}</p>
+                  {turn.answer.confirmWithOfficer && (
+                    <p className="font-medium text-amber-700">{t("assistant_confirm_officer")}</p>
+                  )}
+                  {turn.answer.kccNumber && (
+                    <p className="text-xs text-muted-foreground">{t("assistant_kcc_line")}</p>
+                  )}
+                  {turn.answer.citations.length > 0 && (
+                    <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+                      {turn.answer.citations.map((c, i) => (
+                        <p key={i}>
+                          {t("assistant_source_label")}: {c.source}
+                          {c.page ? `, ${c.page}` : ""}
+                          {!c.expertVerified && " (unverified seed data)"}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  <div className="flex gap-2">
+                    <SpeakButton text={lang === "ta" ? turn.answer.textTa : turn.answer.textEn} />
+                    <Button variant="outline" size="sm" onClick={() => ask(turn.question, turn.id)}>
+                      {t("common_explain_simply")}
+                    </Button>
                   </div>
-                )}
-                <div className="flex gap-2">
-                  <SpeakButton text={lang === "ta" ? turn.answer.textTa : turn.answer.textEn} />
-                  <button
-                    onClick={() => ask(turn.question, turn.id)}
-                    className="tap-target rounded-lg border border-neutral-300 px-3 text-sm"
-                  >
-                    {t("common_explain_simply")}
-                  </button>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ) : null}
           </div>
         ))}
       </div>
 
-      <div className="fixed bottom-16 left-0 right-0 flex items-center gap-2 border-t border-neutral-200 bg-white px-4 py-3">
+      <div className="fixed bottom-16 left-0 right-0 flex items-center gap-2 border-t border-border bg-background px-4 py-3">
         <VoiceButton onResult={(text) => ask(text)} />
-        <input
+        <Input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && ask(input)}
           placeholder={t("assistant_placeholder")}
-          className="tap-target flex-1 rounded-full border border-neutral-300 px-4"
+          className="tap-target flex-1 rounded-full"
         />
-        <button onClick={() => ask(input)} className="tap-target rounded-full bg-brand px-4 text-sm font-medium text-white">
-          ➤
-        </button>
+        <Button size="icon" className="tap-target rounded-full" onClick={() => ask(input)} aria-label={t("assistant_placeholder")}>
+          <Send className="size-5" aria-hidden />
+        </Button>
       </div>
     </PageShell>
   );
