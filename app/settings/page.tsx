@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,19 +20,23 @@ const TELEGRAM_CHAT_ID_KEY = "vayal.telegramChatId";
 export default function SettingsPage() {
   const { t, lang, setLang } = useI18n();
   const { farm, setFarm } = useFarmProfile();
-  const [lowData, setLowData] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.localStorage.getItem(LOW_DATA_KEY) === "1";
-  });
+  // Both of these start at the same value the server rendered ("off" /
+  // empty) and are populated from localStorage only after mounting, below —
+  // reading it in the initializer would make the client's first render
+  // disagree with the server HTML and trigger a hydration mismatch.
+  const [lowData, setLowData] = useState(false);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
   const [backupPassphrase, setBackupPassphrase] = useState("");
   const [backupStatus, setBackupStatus] = useState<string | null>(null);
   const [restoreFile, setRestoreFile] = useState<File | null>(null);
   const [restorePassphrase, setRestorePassphrase] = useState("");
-  const [telegramChatId, setTelegramChatId] = useState(() => {
-    if (typeof window === "undefined") return "";
-    return window.localStorage.getItem(TELEGRAM_CHAT_ID_KEY) ?? "";
-  });
+  const [telegramChatId, setTelegramChatId] = useState("");
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- stored prefs aren't known until the client mounts
+    setLowData(window.localStorage.getItem(LOW_DATA_KEY) === "1");
+    setTelegramChatId(window.localStorage.getItem(TELEGRAM_CHAT_ID_KEY) ?? "");
+  }, []);
 
   function saveTelegramChatId(value: string) {
     setTelegramChatId(value);

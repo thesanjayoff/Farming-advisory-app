@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { LanguageCode } from "@/lib/types";
 import { translate, type DictKey } from "@/lib/i18n/dictionary";
 
@@ -28,7 +28,18 @@ function readStoredLang(): LanguageCode {
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<LanguageCode>(() => readStoredLang());
+  // Always start at the "ta" default — matching what the server rendered —
+  // and only switch to the stored preference once mounted on the client.
+  // Reading localStorage during the initializer (instead of in this effect)
+  // would make the very first client render disagree with the server HTML
+  // whenever the stored language isn't "ta", causing a hydration mismatch.
+  const [lang, setLangState] = useState<LanguageCode>("ta");
+
+  useEffect(() => {
+    const stored = readStoredLang();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the stored language preference isn't known until the client mounts
+    if (stored !== "ta") setLangState(stored);
+  }, []);
 
   const setLang = useCallback((next: LanguageCode) => {
     setLangState(next);
