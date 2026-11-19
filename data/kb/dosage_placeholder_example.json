@@ -1,0 +1,20 @@
+{
+  "id": "dosage_placeholder_example",
+  "titleEn": "[PLACEHOLDER] Example dose-citation slot — not a real recommendation",
+  "titleTa": "[மாதிரி] உதாரண அளவு மேற்கோள் இடம் — உண்மையான பரிந்துரை அல்ல",
+  "cropIds": ["tomato"],
+  "topics": ["dose_placeholder", "fertilizer", "pesticide", "example"],
+  "source": "PLACEHOLDER — no real source loaded. This document exists only to exercise the dosage-refusal code path in tests and demos.",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Not applicable — placeholder content",
+  "versionDate": "2026-11-19",
+  "bodyEn": "This is a placeholder knowledge-base entry used only to test that the assistant correctly refuses to generate doses and instead shows a quoted source excerpt. It must be replaced with a real, licensed, page-cited excerpt (and expertVerified set to true) before this topic can be answered for real farmers.",
+  "bodyTa": "இது ஒரு மாதிரி பதிவு — உண்மையான பரிந்துரை அல்ல. இது உதவியாளர் அளவுகளை உருவாக்காமல் ஆதார மேற்கோளை மட்டும் காட்டுகிறதா என சோதிக்க மட்டுமே பயன்படுகிறது. இதை உண்மையான, உரிமம் பெற்ற, பக்க எண் குறிப்பிடப்பட்ட மேற்கோளுடன் மாற்றாத வரை, இந்த தலைப்பிற்கு உண்மையான விவசாயிகளுக்கு பதில் தர கூடாது.",
+  "containsDoseInfo": true,
+  "doseExcerpt": {
+    "textEn": "[SEED DATA PLACEHOLDER — no verified source excerpt has been loaded for this topic. Do NOT use this as agronomic advice. Replace this field with the literal text and page number from a licensed, current agricultural university or ICAR/KVK guide before this document is used with real farmers.]",
+    "textTa": "[மாதிரி தரவு — இந்த தலைப்புக்கு சரிபார்க்கப்பட்ட ஆதார மேற்கோள் இன்னும் ஏற்றப்படவில்லை. இதை விவசாய ஆலோசனையாக பயன்படுத்த வேண்டாம். உண்மையான விவசாயிகளுக்கு பயன்படுத்தும் முன், இந்த பகுதியை ஒரு உரிமம் பெற்ற, நடப்பு வேளாண் பல்கலைக்கழகம் அல்லது ICAR/KVK வழிகாட்டியின் சரியான வரிகள் மற்றும் பக்க எண்ணுடன் மாற்றவும்.]",
+    "page": "N/A — placeholder"
+  },
+  "expertVerified": false
+}

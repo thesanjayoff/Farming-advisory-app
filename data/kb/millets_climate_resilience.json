@@ -1,0 +1,15 @@
+{
+  "id": "millets_climate_resilience",
+  "titleEn": "Why millets are promoted as climate-resilient crops",
+  "titleTa": "சிறுதானியங்கள் ஏன் தட்பவெப்ப நிலைக்கு ஏற்ற பயிராக ஊக்குவிக்கப்படுகின்றன",
+  "cropIds": ["millet_ragi", "millet_bajra"],
+  "topics": ["millets", "ragi", "finger_millet", "bajra", "pearl_millet", "climate_resilience", "nutrition", "general"],
+  "source": "General crop-context knowledge summarised for this app, pending review against a TNAU/ICAR millet promotion guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Ragi (finger millet) and bajra (pearl millet) are widely promoted in Tamil Nadu and across India as climate-resilient crops because they generally need much less water than paddy, tolerate higher temperatures and short dry spells better, and can grow reasonably well on poorer, less fertile soils where many other crops struggle. Their shorter duration compared to crops like sugarcane or banana also means less exposure time to a single season's weather risk. Nutritionally, both are valued for their fibre, protein, and micronutrient content (including iron and calcium in ragi), and are promoted as part of efforts to diversify diets beyond rice and wheat. None of this means millets are risk-free or suit every field — soil type, market demand near you, and your own farming system matter too. For whether switching some area to millets fits your specific plot and goals, talk to your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "கேழ்வரகு (ragi/finger millet) மற்றும் கம்பு (bajra/pearl millet) ஆகியவை தமிழ்நாட்டிலும் இந்தியா முழுவதும் தட்பவெப்ப நிலைக்கு ஏற்ற பயிர்களாக பரவலாக ஊக்குவிக்கப்படுகின்றன; ஏனெனில் இவை பொதுவாக நெல்லை விட மிகக் குறைவான நீரை தேவைப்படுத்துகின்றன, அதிக வெப்பநிலை மற்றும் குறுகிய வரட்சி காலங்களை நன்றாக தாக்குப்பிடிக்கின்றன, மேலும் மற்ற பல பயிர்கள் சிரமப்படும் வளம் குறைந்த மண்ணிலும் ஓரளவு நன்றாக வளரும். கரும்பு அல்லது வாழை போன்ற பயிர்களை விட இவற்றின் குறைந்த காலம், ஒரு பருவத்தின் வானிலை ஆபத்துக்கு வெளிப்படும் காலத்தையும் குறைக்கிறது. உணவியல் ரீதியாக, இரண்டும் நார்ச்சத்து, புரதம், நுண்சத்துக்கள் (கேழ்வரகில் இரும்புச்சத்து, சுண்ணாம்புச்சத்து உட்பட) காரணமாக மதிக்கப்படுகின்றன, மற்றும் அரிசி, கோதுமைக்கு அப்பால் உணவை பல்வகைப்படுத்தும் முயற்சிகளின் ஒரு பகுதியாக ஊக்குவிக்கப்படுகின்றன. இதன் பொருள் சிறுதானியங்கள் ஆபத்து இல்லாதவை அல்ல, எல்லா வயலுக்கும் பொருந்தும் என்பதும் அல்ல — மண் வகை, உங்களுக்கு அருகில் உள்ள சந்தை தேவை, உங்கள் சொந்த விவசாய முறை ஆகியவையும் முக்கியம். உங்கள் குறிப்பிட்ட நிலம் மற்றும் இலக்குகளுக்கு சிறிதளவு பரப்பை சிறுதானியங்களுக்கு மாற்றுவது பொருந்துமா என்பதை உங்கள் வேளாண் அதிகாரி அல்லது KVK-வுடன் பேசவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

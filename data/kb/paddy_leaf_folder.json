@@ -1,0 +1,15 @@
+{
+  "id": "paddy_leaf_folder",
+  "titleEn": "Identifying leaf folder damage in paddy",
+  "titleTa": "நெல்லில் இலை சுருட்டுப்புழு பாதிப்பை கண்டறிதல்",
+  "cropIds": ["paddy"],
+  "topics": ["pest", "leaf_folder", "identification", "paddy", "rice_leaf_folder"],
+  "source": "General pest-identification knowledge summarised for this app, pending review against a TNAU/ICAR pest-identification guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Leaf folder damage in paddy shows as leaves rolled or folded lengthwise and held together with silk-like webbing. If you open a folded leaf, you may find a pale green caterpillar inside. Damaged leaves often show white or pale parallel streaks where the caterpillar has scraped the green tissue while feeding inside the fold. Check several hills spread across the field rather than just the bunds, since folded leaves are easy to miss from a distance. Identification alone does not tell you whether treatment is needed or what to use — bring a sample or clear photos to your Agriculture Officer or Krishi Vigyan Kendra (KVK) for that decision.",
+  "bodyTa": "நெல் பயிரில் இலை சுருட்டுப்புழு பாதிப்பு, இலைகள் நீளவாக்கில் சுருட்டப்பட்டு பட்டு போன்ற நூலால் ஒட்டப்பட்டிருப்பதாக தெரியும். சுருட்டிய இலையை விரித்துப் பார்த்தால், உள்ளே வெளிர் பச்சை நிற புழு இருக்கலாம். புழு உள்ளே இருந்து பசுமையான பகுதியை தின்பதால், பாதிக்கப்பட்ட இலைகளில் வெள்ளை அல்லது வெளிர் நிற கோடுகள் இணையாக தெரியும். வயல் வரம்புகளில் மட்டும் அல்லாமல், வயலின் பல பகுதிகளில் உள்ள பயிர்களை சோதிக்கவும், ஏனெனில் தூரத்தில் இருந்து சுருட்டிய இலைகளை கண்டறிவது கடினம். இது பாதிப்பை அடையாளம் காண மட்டுமே உதவும்; சிகிச்சை தேவையா, எதைப் பயன்படுத்த வேண்டும் என்பதற்கு மாதிரியை அல்லது தெளிவான புகைப்படங்களை உங்கள் வேளாண் அதிகாரி அல்லது KVK-வுக்கு காட்டவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

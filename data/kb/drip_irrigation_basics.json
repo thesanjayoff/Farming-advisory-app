@@ -1,0 +1,14 @@
+{
+  "id": "drip_irrigation_basics",
+  "titleEn": "Drip irrigation basics for water-scarce conditions",
+  "titleTa": "நீர் பற்றாக்குறை நிலைக்கு சொட்டு நீர்ப்பாசன அடிப்படைகள்",
+  "topics": ["drip_irrigation", "water", "irrigation", "flood_irrigation", "general"],
+  "source": "General irrigation knowledge summarised for this app, pending review against a TNAU/ICAR water management guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Drip irrigation delivers water slowly, directly near each plant's root zone through small emitters along a pipe or tube, instead of flooding the whole field. Because water goes mainly where the roots are rather than spreading across paths, bunds, and bare soil, a field under drip generally uses noticeably less water than flood irrigation for the same crop, and weed growth between rows can be lower too since the soil between plants stays drier. This makes drip especially useful in areas with limited or unreliable water, such as borewell-dependent or rainfed-supplemented farms. The trade-offs are an upfront cost to set up pipes, emitters, and filters, the need for regular cleaning/flushing to stop emitters from clogging (especially with hard or silty water), and a learning curve for maintenance. Drip suits row crops like vegetables, banana, and sugarcane particularly well, and is less commonly used for flood-grown paddy. Whether drip irrigation is worth the investment for your specific plot, water source, and crop, and what subsidy schemes may help with the cost, are best discussed with your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "சொட்டு நீர்ப்பாசனம் முழு வயலையும் நீரில் மூழ்கடிக்காமல், குழாய் வழியே உள்ள சிறிய துளைகள் மூலம் ஒவ்வொரு செடியின் வேர் பகுதிக்கும் அருகில் மெதுவாக நேரடியாக நீரை செலுத்துகிறது. நீர் பெரும்பாலும் வேர் இருக்கும் இடத்திற்கே செல்வதால், பாதைகள், வரம்புகள், வெற்று மண் போன்றவற்றில் பரவாததால், ஒரே பயிருக்கு சொட்டு நீர்ப்பாசனம் பொதுவாக வெள்ள நீர்ப்பாசனத்தை விட குறைவான நீரை பயன்படுத்தும்; வரிசைகளுக்கு இடையில் உள்ள மண் உலர்ந்து இருப்பதால் புல் வளர்ச்சியும் குறையலாம். இது போரு வெல் சார்ந்த அல்லது மழை நம்பிய வயல்கள் போன்ற நீர் பற்றாக்குறை உள்ள பகுதிகளில் மிகவும் பயனுள்ளதாக இருக்கும். இதன் சவால்கள்: குழாய்கள், துளைகள், வடிகட்டிகள் அமைக்க ஆரம்ப செலவு தேவை; துளைகள் அடைபடாமல் இருக்க (குறிப்பாக கடினமான அல்லது வண்டல் கலந்த நீரில்) தொடர்ந்து சுத்தம் செய்ய வேண்டும்; மற்றும் பராமரிப்பு கற்றுக்கொள்ள சிறிது நேரம் ஆகும். காய்கறிகள், வாழை, கரும்பு போன்ற வரிசை பயிர்களுக்கு சொட்டு நீர்ப்பாசனம் நன்றாக பொருந்தும்; வெள்ள நிலத்தில் வளரும் நெல்லுக்கு இது குறைவாகவே பயன்படுத்தப்படுகிறது. உங்கள் குறிப்பிட்ட நிலம், நீர் ஆதாரம், பயிருக்கு சொட்டு நீர்ப்பாசனம் முதலீடு செய்ய தகுதியானதா, செலவுக்கு உதவும் மானிய திட்டங்கள் என்ன என்பதை உங்கள் வேளாண் அதிகாரி அல்லது KVK-வுடன் ஆலோசிக்கவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

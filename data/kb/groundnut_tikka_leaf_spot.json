@@ -1,0 +1,15 @@
+{
+  "id": "groundnut_tikka_leaf_spot",
+  "titleEn": "Identifying tikka leaf spot in groundnut",
+  "titleTa": "நிலக்கடலையில் டிக்கா இலைப்புள்ளி நோயை கண்டறிதல்",
+  "cropIds": ["groundnut"],
+  "topics": ["disease", "tikka", "leaf_spot", "identification", "groundnut"],
+  "source": "General disease-identification knowledge summarised for this app, pending review against a TNAU/ICAR disease-identification guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Tikka leaf spot in groundnut appears as small, roughly circular spots on the leaves, typically dark brown to almost black, often surrounded by a pale yellow halo. There are two closely related forms (early leaf spot and late leaf spot) that can look similar in the field; late leaf spot spots tend to be darker and rounder with a less distinct yellow halo. Heavily spotted leaves may dry up and drop early, which can affect pod filling if it happens before pods have matured. Check both the upper and lower leaf surfaces, and look across the whole field rather than one corner, since spread is often uneven. Identification alone does not tell you whether treatment is needed or what to use — bring a sample or clear photos to your Agriculture Officer or Krishi Vigyan Kendra (KVK) for that decision.",
+  "bodyTa": "நிலக்கடலையில் டிக்கா இலைப்புள்ளி நோய் வந்தால், இலைகளில் சிறிய, வட்டவடிவ புள்ளிகள் தோன்றும்; பொதுவாக அடர் பழுப்பு அல்லது கருப்பு நிறத்தில், அதன் சுற்றிலும் வெளிர் மஞ்சள் வளையம் இருக்கும். இதற்கு இரண்டு நெருங்கிய வகைகள் உள்ளன (முன் இலைப்புள்ளி மற்றும் பிந்தை இலைப்புள்ளி), வயலில் இரண்டும் ஒரே மாதிரி தெரியலாம்; பிந்தை இலைப்புள்ளியின் புள்ளிகள் பொதுவாக இன்னும் அடர்ந்து, வட்டமாக, மஞ்சள் வளையம் குறைவாக தெரியும். அதிகமாக புள்ளிகள் உள்ள இலைகள் விரைவில் உலர்ந்து விழலாம்; காய்கள் முழுமையாக வளராத நிலையில் இது நடந்தால் விளைச்சலை பாதிக்கலாம். இலையின் மேல்பக்கம் மற்றும் அடிப்பக்கம் இரண்டையும் சோதிக்கவும், ஒரு மூலையில் மட்டும் அல்லாமல் முழு வயலையும் பார்க்கவும், ஏனெனில் பரவல் சமமாக இருக்காது. இது பாதிப்பை அடையாளம் காண மட்டுமே உதவும்; சிகிச்சை தேவையா, எதைப் பயன்படுத்த வேண்டும் என்பதற்கு மாதிரியை அல்லது தெளிவான புகைப்படங்களை உங்கள் வேளாண் அதிகாரி அல்லது KVK-வுக்கு காட்டவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

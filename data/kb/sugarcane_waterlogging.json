@@ -1,0 +1,15 @@
+{
+  "id": "sugarcane_waterlogging",
+  "titleEn": "Why sugarcane is still damaged by waterlogging",
+  "titleTa": "கரும்பு ஏன் தண்ணீர் தேக்கத்தால் பாதிக்கப்படுகிறது",
+  "cropIds": ["sugarcane"],
+  "topics": ["sugarcane", "waterlogging", "drainage", "flood", "grand_growth", "roots", "general"],
+  "source": "General agronomy knowledge summarised for this app, pending review against a TNAU/ICAR sugarcane cultivation guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Sugarcane needs a lot of water overall, especially during its grand growth stage when the crop is putting on most of its height and bulk — but needing a lot of water over the season is not the same as tolerating standing water for days at a time. Roots still need oxygen from the soil to function; when a field stays waterlogged, the air spaces in the soil fill with water, oxygen to the roots drops sharply, and roots can suffocate and start to die back even while the field looks 'well watered' from the surface. This can show up as yellowing, stunted growth, or lodging (canes falling over) even though water was not the thing in short supply. This is why good drainage — channels that let excess water leave the field after heavy rain — matters just as much as irrigation for sugarcane, particularly during grand growth. This app's flood-risk alerts are based only on forecast rainfall amounts for your crop's current stage; they do not inspect your field's actual drainage. For help improving drainage on your specific plot, consult your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "கரும்புக்கு பருவம் முழுவதும் அதிக தண்ணீர் தேவை, குறிப்பாக பயிர் அதிக உயரமும் பருமனும் பெறும் 'பெரு வளர்ச்சி' (grand growth) நிலையில் — ஆனால் பருவம் முழுவதும் அதிக தண்ணீர் தேவைப்படுவது, பல நாட்களுக்கு தண்ணீர் தேங்கி இருப்பதை தாங்கிக்கொள்வது என்று பொருள் அல்ல. வேர்கள் வேலை செய்ய மண்ணிலிருந்து ஆக்ஸிஜன் தேவை; வயலில் தண்ணீர் தேங்கியே இருந்தால், மண்ணில் உள்ள காற்று இடைவெளிகள் தண்ணீரால் நிரம்பி, வேர்களுக்கு கிடைக்கும் ஆக்ஸிஜன் வெகுவாக குறையும், வயல் மேலோட்டமாக 'நன்றாக நீர் பாய்ச்சப்பட்டது' போல தெரிந்தாலும் வேர்கள் மூச்சுத் திணறி சாகத் தொடங்கலாம். இதனால் தண்ணீர் குறைவு இல்லாதிருந்தும், மஞ்சள் நிறமாதல், வளர்ச்சி குன்றுதல், அல்லது கரும்பு சாய்தல் (lodging) போன்றவை தோன்றலாம். இதனால்தான் அதிக மழைக்கு பின் கூடுதல் தண்ணீரை வயலில் இருந்து வெளியேற்ற அனுமதிக்கும் நல்ல வடிகால் வசதி, கரும்புக்கு நீர்ப்பாசனம் போலவே முக்கியமானது, குறிப்பாக பெரு வளர்ச்சி நிலையில். இந்த செயலியின் வெள்ள ஆபத்து எச்சரிக்கைகள் உங்கள் பயிரின் தற்போதைய நிலைக்கான முன்னறிவிப்பு மழை அளவை மட்டுமே அடிப்படையாக வைத்தவை; உங்கள் வயலின் உண்மையான வடிகால் நிலையை இவை பரிசோதிப்பதில்லை. உங்கள் குறிப்பிட்ட நிலத்தின் வடிகால் வசதியை மேம்படுத்த உதவிக்கு உங்கள் வேளாண் அதிகாரி அல்லது KVK-வை அணுகவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

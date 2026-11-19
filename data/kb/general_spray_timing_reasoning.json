@@ -1,0 +1,14 @@
+{
+  "id": "general_spray_timing_reasoning",
+  "titleEn": "Why weather timing matters before spraying",
+  "titleTa": "தெளிப்பதற்கு முன் வானிலை நேரம் ஏன் முக்கியம்",
+  "topics": ["spray", "weather", "timing", "wind", "rain", "runoff", "drift", "general"],
+  "source": "General agronomy knowledge summarised for this app, pending review against a TNAU/ICAR crop protection guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Spraying shortly before rain usually wastes the product: rain can wash a large part of what was applied off the leaves and into the soil before it has had time to work, so the treatment is less effective and may need repeating. Washed-off spray can also run off into drains, ponds, or nearby water bodies, which is a waste of money and can harm fish, other water life, and water used by people and animals downstream. Spraying in high wind causes drift — fine droplets are carried sideways instead of landing on the intended plants — which again wastes product, can injure sensitive crops in a neighbouring field, and can expose nearby people, including other farm workers, to chemicals they did not intend to be near. For these reasons, this app's weather alerts flag upcoming rain or high wind and suggest waiting, based only on the forecast — they do not decide what to spray or how much; that decision, including any product and dose, should always come from your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "மழைக்கு முன் தெளிப்பது பெரும்பாலும் பொருளை வீணாக்கும்: தெளித்தது வேலை செய்யும் முன் மழை அதை இலைகளில் இருந்து கழுவி மண்ணில் கொண்டுவிடலாம், இதனால் சிகிச்சையின் பலன் குறையும், மீண்டும் தெளிக்க வேண்டி வரலாம். கழுவப்பட்ட மருந்து வாய்க்கால்கள், குளங்கள் அல்லது அருகிலுள்ள நீர் நிலைகளில் கலக்கலாம்; இது பணத்தை வீணடிப்பதுடன் மீன்கள், பிற நீர் உயிரினங்கள், கீழ்நீரோட்டத்தில் மக்கள் மற்றும் விலங்குகள் பயன்படுத்தும் நீரையும் பாதிக்கலாம். அதிக காற்றில் தெளிப்பது 'drift' எனப்படும் பிரச்சினையை ஏற்படுத்தும் — சிறிய துளிகள் நோக்கிய பயிரில் விழாமல் பக்கவாட்டில் பறந்து செல்லும் — இதனாலும் பொருள் வீணாகும், அருகிலுள்ள வயலில் உள்ள உணர்வுள்ள பயிர்களுக்கு சேதம் ஏற்படலாம், மற்றும் அருகில் இருக்கும் மக்கள், மற்ற தொழிலாளர்கள் ஆகியோருக்கு எதிர்பாராத வேதிப்பொருள் தொடர்பு ஏற்படலாம். இதனால்தான் இந்த செயலியின் வானிலை எச்சரிக்கைகள் முன்னறிவிப்பு மழை அல்லது அதிக காற்றை மட்டும் அடிப்படையாக வைத்து காத்திருக்கும்படி பரிந்துரைக்கின்றன — என்ன தெளிக்க வேண்டும், எவ்வளவு என்பதை இவை முடிவு செய்வதில்லை; அந்த முடிவு, பொருள் மற்றும் அளவு உட்பட, எப்போதும் உங்கள் வேளாண் அதிகாரி அல்லது கிருஷி விஞ்ஞான கேந்திரத்திடம் (KVK) இருந்தே வர வேண்டும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

@@ -1,0 +1,15 @@
+{
+  "id": "tomato_leaf_curl_virus",
+  "titleEn": "Identifying tomato leaf curl virus",
+  "titleTa": "தக்காளியில் இலை சுருள் நோயை கண்டறிதல்",
+  "cropIds": ["tomato"],
+  "topics": ["disease", "leaf_curl", "virus", "identification", "tomato", "whitefly"],
+  "source": "General disease-identification knowledge summarised for this app, pending review against a TNAU/ICAR disease-identification guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Tomato leaf curl virus shows as leaves curling upward and inward, becoming thickened, pale or yellowish, with the whole plant looking stunted and bushy compared to healthy neighbours. Flowering and fruit set are often reduced. This virus spreads mainly through whiteflies — small, pale, moth-like insects that gather on the underside of leaves — moving from plant to plant and field to field as they feed, not through soil or seed in most cases. Once a plant is infected there is no cure for that plant; management is about reducing spread to healthy plants, for example by removing and discarding infected plants early, keeping the field free of weeds that host whiteflies, and choosing leaf-curl-tolerant varieties for the next season where available. For confirmation and a management plan for your field, consult your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "தக்காளியில் இலை சுருள் நோய் வந்தால், இலைகள் மேல்நோக்கி மற்றும் உள்நோக்கி சுருண்டு, தடிப்பாகி, வெளிர் அல்லது மஞ்சள் நிறமாக மாறும்; ஆரோக்கியமான பக்கத்து செடிகளுடன் ஒப்பிடும்போது முழு செடியும் வளர்ச்சி குன்றி படர்ந்தது போல தெரியும். பூக்கும் தன்மையும் காய் பிடிப்பும் பெரும்பாலும் குறையும். இந்த வைரஸ் பெரும்பாலும் வெள்ளை ஈ (இலையின் அடிப்பக்கத்தில் கூடும் சிறிய, வெளிர் நிற பூச்சி) மூலமாகவே செடியிலிருந்து செடிக்கும், வயலிலிருந்து வயலுக்கும் பரவும்; பெரும்பாலான நேரங்களில் மண் அல்லது விதை மூலம் பரவாது. ஒரு செடி பாதிக்கப்பட்டவுடன் அதற்கு குணப்படுத்த முடியாது; மேலாண்மை என்பது ஆரோக்கியமான செடிகளுக்கு பரவாமல் தடுப்பதே — எடுத்துக்காட்டாக, பாதிக்கப்பட்ட செடிகளை விரைவில் அகற்றி அப்புறப்படுத்துதல், வெள்ளை ஈக்களுக்கு தங்குமிடமாக இருக்கும் புற்களை வயலில் இல்லாமல் வைத்தல், மற்றும் கிடைக்கும் இடங்களில் அடுத்த பருவத்திற்கு இலை சுருள் தடுப்பு திறன் கொண்ட வகைகளை தேர்ந்தெடுத்தல். உங்கள் வயலுக்கான உறுதிப்படுத்தல் மற்றும் மேலாண்மை திட்டத்திற்கு உங்கள் வேளாண் அதிகாரி அல்லது KVK-வை அணுகவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}

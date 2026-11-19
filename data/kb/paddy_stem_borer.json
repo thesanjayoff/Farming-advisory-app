@@ -1,0 +1,15 @@
+{
+  "id": "paddy_stem_borer",
+  "titleEn": "Identifying stem borer damage in paddy",
+  "titleTa": "நெல்லில் தண்டு துளைப்பான் பாதிப்பை கண்டறிதல்",
+  "cropIds": ["paddy"],
+  "topics": ["pest", "stem_borer", "identification", "paddy", "yellow_stem_borer"],
+  "source": "General pest-identification knowledge summarised for this app, pending review against a TNAU/ICAR pest-identification guide",
+  "sourceUrl": "https://agritech.tnau.ac.in/",
+  "licence": "Original summary — not a verbatim reproduction of any single source",
+  "versionDate": "2026-11-19",
+  "bodyEn": "Stem borer damage in paddy usually shows as a 'dead heart' (the central shoot of a young plant turns yellow and withers, and pulls out easily) during the vegetative stage, or as a 'white ear head' (empty, pale panicle that stays upright instead of bending with grain weight) after flowering. Check a few hills across the field, not just the edges, since damage can be patchy. Identification alone does not tell you whether treatment is needed or what to use — for that, bring a sample or clear photos to your Agriculture Officer or Krishi Vigyan Kendra (KVK).",
+  "bodyTa": "நெல் பயிரில் தண்டு துளைப்பான் பாதிப்பு பொதுவாக இளம் பயிரில் 'இறந்த இதயம்' (நடு தண்டு மஞ்சளாகி வாடி, இலகுவாக இழுக்கப்படும்) அல்லது பூக்கும் பின் 'வெள்ளை கூளை' (தானியம் இல்லாமல் நிமிர்ந்து நிற்கும் வெளிர் கூளை) என காட்டப்படும். வயலின் பல பகுதிகளில் சோதிக்கவும், ஓரங்களில் மட்டும் அல்ல. இது பாதிப்பை அடையாளம் காண மட்டுமே உதவும்; சிகிச்சை தேவையா, எதைப் பயன்படுத்த வேண்டும் என்பதற்கு மாதிரியை அல்லது தெளிவான புகைப்படங்களை உங்கள் வேளாண் அதிகாரி அல்லது KVK-வுக்கு காட்டவும்.",
+  "containsDoseInfo": false,
+  "expertVerified": false
+}
